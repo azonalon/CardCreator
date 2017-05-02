@@ -6,91 +6,96 @@ import json
 import urllib
 import sys
 import time
-from PyQt5 import QtCore, QtWidgets, QtGui
+from PyQt5 import QtCore, QtWidgets, QtGui, uic
 
-# adding path to geckodriver to the OS environment variable
-# assuming that it is stored at the same path as this script
-os.environ["PATH"] += os.pathsep + os.getcwd()
-download_path = "dataset/"
+class ImageLoader(QtCore.QThread):
+    signalHasImage = QtCore.pyqtSignal(int)
+    extensions = {"jpg", "jpeg", "png", "gif"}
+    def __init__(self, imgUrl, imgType, identifier):
+        QtCore.QThread.__init__(self)
+        self.imgUrl = imgUrl
+        self.imgType = imgType
+        self.identifier = identifier
 
-class ImageGetterWindow(QtCore.QApplication, QtWidgets.QMainWindow):
+    def run(self):
+        self.getImage()
+
+    def getImage(self):
+        if self.imgType not in self.extensions:
+            self.imgType = "jpg"
+
+        self.imageBytes = urllib.request.urlopen(self.imgUrl).read()
+        self.signalHasImage.emit(self.identifier)
+
+
+class ImageGetterWindow(QtWidgets.QWidget):
     def __init__(self):
-        # self.app = QtWidgets.QApplication([])
-        super(QtWidgets.QApplication, self).__init__()
-        super(QtWidgets.QMainWindow, self).__init__()
-        self.layout = QtWidgets.QGridLayout()
-        self.imageLabel = QtWidgets.QLabel(self)
+        super(QtWidgets.QWidget, self).__init__()
+        self.setLayout(QtWidgets.QGridLayout())
+        self.imagePixmaps = []
+        self.imageLabels = []
+        self.nLoading = 0
+        self.imageWidgets = []
+        self.loadingPixmap = QtGui.QPixmap('./giphy.gif')
+        # self.sizeHint(300, 300)
 
-    def showImage(self, raw_img):
-        qImage = QtGui.QImageReader(str(raw_img))
-        self.imageLabel.setPixmap(qImage)
 
-    def startEventLoop(self):
-        self.show()
-        self.exec_()
+    def addImage(self, raw_img):
+        pm = QtGui.QPixmap()
+        pm.loadFromData(raw_img)
+        imageLabel = QtWidgets.QLabel(self)
+        imageLabel.setPixmap(self.pm)
+
+
+    def scrapeImages(self, searchtext, num_requested):
+        self.initImageWidgets(num_requested)
+        url = "https://www.google.co.in/search?q="+searchtext+"&source=lnms&tbm=isch"
+        self.driver = webdriver.Chrome()
+        self.driver.get(url)
+        self.loaders = {}
+
+        imges = self.driver.find_elements_by_xpath("//div[@class='rg_meta']")
+        imges = imges[0 : min(len(imges), num_requested)]
+        self.nLoading = len(imges)
+
+        print ("Total images:", len(imges), "\n")
+
+
+        for i, img in enumerate(imges):
+            imgUrl = json.loads(img.get_attribute('innerHTML'))["ou"]
+            imgType = json.loads(img.get_attribute('innerHTML'))["ity"]
+            loader = ImageLoader(imgUrl, imgType, i)
+            loader.signalHasImage.connect(self.onImageLoadingFinished)
+            loader.start()
+            self.loaders[i] = loader
+        # print( "Total downloaded: ", downloaded_img_count, "/", img_count)
+
+    def initImageWidgets(self, nRequested):
+        for i in range(nRequested):
+            newWidget = QtWidgets.QLabel()
+            newWidget.setPixmap(self.loadingPixmap)
+            self.layout().addWidget(newWidget)
+            self.imageWidgets.append(newWidget)
+
+    def onImageLoadingFinished(self, i):
+        self.nLoading -= 1
+        if self.nLoading == 0:
+            self.driver.quit()
+        pixmap = QtGui.QPixmap()
+        pixmap.loadFromData(self.loaders[i].imageBytes)
+        self.imageWidgets[i].setPixmap(pixmap)
+
 
 
 def main():
-    app = ImageGetterWindow()
-    searchtext = sys.argv[1]  # the search query
-    num_requested = int(sys.argv[2]) # number of images to download
-    number_of_scrolls = 0  ##num_requested // 400 + 1
-    # number_of_scrolls * 400 images will be opened in the browser
-
-    if not os.path.exists(download_path + searchtext.replace(" ", "_")):
-        os.makedirs(download_path + searchtext.replace(" ", "_"))
-
-    url = "https://www.google.co.in/search?q="+searchtext+"&source=lnms&tbm=isch"
-    driver = webdriver.Chrome()
-    driver.get(url)
-
-    # headers = {}
-    # headers['User-Agent'] = "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"
-    extensions = {"jpg", "jpeg", "png", "gif"}
-    img_count = 0
-    downloaded_img_count = 0
-
-    for _ in range(number_of_scrolls):
-        for __ in range(1):
-            # multiple scrolls needed to show all 400 images
-            driver.execute_script("window.scrollBy(0, 1000)")
-            time.sleep(0.2)
-        # to load next 400 images
-        time.sleep(0.5)
-        try:
-            driver.find_element_by_xpath("//input[@value='Show more results']").click()
-        except Exception as e:
-            print ("Less images found:", e)
-            break
-
-    imges = driver.find_elements_by_xpath("//div[@class='rg_meta']")
-    print ("Total images:", len(imges), "\n")
-    for img in imges:
-        img_count += 1
-        img_url = json.loads(img.get_attribute('innerHTML'))["ou"]
-        img_type = json.loads(img.get_attribute('innerHTML'))["ity"]
-        print ("Downloading image", img_count, ": ", img_url)
-        # try:
-        if img_type not in extensions:
-            img_type = "jpg"
-        # req = urllib.request.Request(img_url, headers=headers)
-        raw_img = urllib.request.urlopen(img_url).read()
-        f = open(download_path+searchtext.replace(" ", "_")+"/"+str(downloaded_img_count)+"."+img_type, "wb")
-        f.write(raw_img)
-        f.close
-        # import pdb; pdb.set_trace()
-        downloaded_img_count += 1
-        # except Exception as e:
-        #     print ("Download failed:", e)
-        # finally:
-        #     print ("Hi")
-        if downloaded_img_count >= num_requested:
-            break
-    driver.quit()
-
-    app.startEventLoop()
-
-    print( "Total downloaded: ", downloaded_img_count, "/", img_count)
+    app = QtWidgets.QApplication(sys.argv)
+    timer = QtCore.QTimer()
+    timer.setSingleShot(True)
+    timer.timeout.connect(lambda: win.scrapeImages("beautiful", 5))
+    win = ImageGetterWindow()
+    win.show()
+    timer.start(200)
+    app.exec_()
 
 if __name__ == "__main__":
     main()
