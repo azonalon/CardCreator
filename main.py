@@ -6,16 +6,21 @@ import json
 import urllib
 import sys
 import time
+import reading
 from PyQt5 import QtCore, QtWidgets, QtGui, uic
 
+
+f = open('./imageViewer_ui.py', 'w')
+uic.compileUi('./imageViewer.ui', f)
+f.close()
+uiImageLoader, baseClass = uic.loadUiType('./imageViewer.ui')
+
 class ImageLoader(QtCore.QThread):
-    signalHasImage = QtCore.pyqtSignal(int)
     extensions = {"jpg", "jpeg", "png", "gif"}
-    def __init__(self, imgUrl, imgType, identifier):
+    def __init__(self, imgUrl, imgType):
         QtCore.QThread.__init__(self)
         self.imgUrl = imgUrl
         self.imgType = imgType
-        self.identifier = identifier
 
     def run(self):
         self.getImage()
@@ -24,77 +29,80 @@ class ImageLoader(QtCore.QThread):
         if self.imgType not in self.extensions:
             self.imgType = "jpg"
 
-        self.imageBytes = urllib.request.urlopen(self.imgUrl).read()
-        self.signalHasImage.emit(self.identifier)
+        try:
+            self.imageBytes = urllib.request.urlopen(self.imgUrl).read()
+        except:
+            self.imageBytes = open('./giphy', 'rb').read()
+            pass
 
 
-class ImageGetterWindow(QtWidgets.QWidget):
+def scrapeImages(searchText, nRequested):
+    url = "https://www.google.co.in/search?q="+searchText+"&source=lnms&tbm=isch"
+    driver = webdriver.Chrome()
+    driver.get(url)
+
+    imges = driver.find_elements_by_xpath("//div[@class='rg_meta']")
+    imges = imges[0 : min(len(imges), nRequested)]
+
+    print ("Total images:", len(imges), "\n")
+    imgUrls = [json.loads(img.get_attribute('innerHTML'))["ou"] for img in imges]
+    imgTypes = [json.loads(img.get_attribute('innerHTML'))["ity"] for img in imges]
+    driver.quit()
+    return zip(imgUrls, imgTypes)
+
+
+
+
+class ImageGetterWindow(QtWidgets.QWidget, uiImageLoader, QtCore.QObject):
     def __init__(self):
         super(QtWidgets.QWidget, self).__init__()
-        self.setLayout(QtWidgets.QGridLayout())
+        QtCore.QObject.__init__(self)
+        self.setupUi(self)
+        # self.imageList.setIconSize(QtCore.QSize(200, 200))
         self.imagePixmaps = []
         self.imageLabels = []
         self.nLoading = 0
-        self.imageWidgets = []
+        self.nAcquired = 0
+        self.bFetchImages.clicked.connect(
+            lambda: self.scrapeImages(self.leFetchImages.text(), 5)
+        )
         self.loadingPixmap = QtGui.QPixmap('./giphy.gif')
-        # self.sizeHint(300, 300)
-
-
-    def addImage(self, raw_img):
-        pm = QtGui.QPixmap()
-        pm.loadFromData(raw_img)
-        imageLabel = QtWidgets.QLabel(self)
-        imageLabel.setPixmap(self.pm)
-
-
-    def scrapeImages(self, searchtext, num_requested):
-        self.initImageWidgets(num_requested)
-        url = "https://www.google.co.in/search?q="+searchtext+"&source=lnms&tbm=isch"
-        self.driver = webdriver.Chrome()
-        self.driver.get(url)
         self.loaders = {}
 
-        imges = self.driver.find_elements_by_xpath("//div[@class='rg_meta']")
-        imges = imges[0 : min(len(imges), num_requested)]
-        self.nLoading = len(imges)
-
-        print ("Total images:", len(imges), "\n")
-
-
-        for i, img in enumerate(imges):
-            imgUrl = json.loads(img.get_attribute('innerHTML'))["ou"]
-            imgType = json.loads(img.get_attribute('innerHTML'))["ity"]
-            loader = ImageLoader(imgUrl, imgType, i)
-            loader.signalHasImage.connect(self.onImageLoadingFinished)
+    def scrapeImages(self, searchText, nRequested):
+        self.initImageWidgets(nRequested)
+        imges = scrapeImages(searchText, nRequested)
+        for i, (imgUrl, imgType) in enumerate(imges):
+            print(imgUrl, imgType)
+            loader = ImageLoader(imgUrl, imgType)
+            loader.finished.connect(self.onImageLoadingFinished)
             loader.start()
             self.loaders[i] = loader
-        # print( "Total downloaded: ", downloaded_img_count, "/", img_count)
+
 
     def initImageWidgets(self, nRequested):
         for i in range(nRequested):
-            newWidget = QtWidgets.QLabel()
-            newWidget.setPixmap(self.loadingPixmap)
-            self.layout().addWidget(newWidget)
-            self.imageWidgets.append(newWidget)
+            newIcon = QtGui.QIcon(self.loadingPixmap)
+            self.imageList.addItem(
+                QtWidgets.QListWidgetItem(newIcon, "")
+            )
 
-    def onImageLoadingFinished(self, i):
-        self.nLoading -= 1
-        if self.nLoading == 0:
-            self.driver.quit()
+    def onImageLoadingFinished(self):
         pixmap = QtGui.QPixmap()
-        pixmap.loadFromData(self.loaders[i].imageBytes)
-        self.imageWidgets[i].setPixmap(pixmap)
+        pixmap.loadFromData(self.sender().imageBytes)
+        self.imageList.item(self.nAcquired).setIcon(QtGui.QIcon(pixmap))
+        self.nAcquired += 1
 
 
 
 def main():
     app = QtWidgets.QApplication(sys.argv)
-    timer = QtCore.QTimer()
-    timer.setSingleShot(True)
-    timer.timeout.connect(lambda: win.scrapeImages("beautiful", 5))
+    # timer = QtCore.QTimer()
+    # timer.setSingleShot(True)
+    # timer.timeout.connect(lambda: win.scrapeImages(sys.argv[1], 5))
     win = ImageGetterWindow()
     win.show()
-    timer.start(200)
+    # timer.start(0)
     app.exec_()
 
 if __name__ == "__main__":

@@ -1,76 +1,57 @@
-#!/bin/python
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
+from bs4 import BeautifulSoup
+import requests
+import re
+import urllib
 import os
 import json
-import urllib
 import sys
-import time
 
-# adding path to geckodriver to the OS environment variable
-# assuming that it is stored at the same path as this script
-os.environ["PATH"] += os.pathsep + os.getcwd()
-download_path = "dataset/"
+def get_soup(url,header):
+    return BeautifulSoup(urllib.request.urlopen(urllib.request.Request(url,headers=header)),'html.parser')
 
-def main():
-    searchtext = sys.argv[1] # the search query
-    num_requested = int(sys.argv[2]) # number of images to download
-    number_of_scrolls = num_requested // 400 + 1
-    # number_of_scrolls * 400 images will be opened in the browser
 
-    if not os.path.exists(download_path + searchtext.replace(" ", "_")):
-        os.makedirs(download_path + searchtext.replace(" ", "_"))
+query = sys.argv[1] #raw_input("query image")# you can change the query for the image  here
+image_type="ActiOn"
+query= query.split()
+query='+'.join(query)
+url="https://www.google.co.in/search?q="+query+"&source=lnms&tbm=isch"
+print(url)
+#add the directory for your image here
+DIR="Pictures"
+header={'User-Agent':"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36"
+}
+soup = get_soup(url,header)
 
-    url = "https://www.google.co.in/search?q="+searchtext+"&source=lnms&tbm=isch"
-    driver = webdriver.Chrome()
-    driver.get(url)
 
-    headers = {}
-    headers['User-Agent'] = "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"
-    extensions = {"jpg", "jpeg", "png", "gif"}
-    img_count = 0
-    downloaded_img_count = 0
+ActualImages=[]# contains the link for Large original images, type of  image
+for a in soup.find_all("div",{"class":"rg_meta"}):
+    link , Type =json.loads(a.text)["ou"]  ,json.loads(a.text)["ity"]
+    ActualImages.append((link,Type))
 
-    for _ in range(number_of_scrolls):
-        for __ in range(10):
-            # multiple scrolls needed to show all 400 images
-            driver.execute_script("window.scrollBy(0, 1000000)")
-            time.sleep(0.2)
-        # to load next 400 images
-        time.sleep(0.5)
-        try:
-            driver.find_element_by_xpath("//input[@value='Show more results']").click()
-        except Exception as e:
-            # print "Less images found:", e
-            break
+print  ("there are total" , len(ActualImages),"images")
 
-    imges = driver.find_elements_by_xpath("//div[@class='rg_meta']")
-    # print "Total images:", len(imges), "\n"
-    for img in imges:
-        img_count += 1
-        img_url = json.loads(img.get_attribute('innerHTML'))["ou"]
-        img_type = json.loads(img.get_attribute('innerHTML'))["ity"]
-        # print "Downloading image", img_count, ": ", img_url
-        try:
-            if img_type not in extensions:
-                img_type = "jpg"
-            req = urllib.request.Request(img_url, headers=headers)
-            raw_img = urllib.request.urlopen(req).read()
-            f = open(download_path+searchtext.replace(" ", "_")+"/"+str(downloaded_img_count)+"."+img_type, "wb")
-            f.write(raw_img)
-            f.close
-            downloaded_img_count += 1
-        except Exception as e:
-            pass
-            # print "Download failed:", e
-        finally:
-            pass
-            # print
-        if downloaded_img_count >= num_requested:
-            break
+if not os.path.exists(DIR):
+            os.mkdir(DIR)
+DIR = os.path.join(DIR, query.split()[0])
 
-    # print "Total downloaded: ", downloaded_img_count, "/", img_count
-    driver.quit()
+if not os.path.exists(DIR):
+            os.mkdir(DIR)
+###print images
+for i , (img , Type) in enumerate( ActualImages):
+    # try:
+    req = urllib.request.Request(img, headers={'User-Agent' : header})
+    raw_img = urllib.request.urlopen(req).read()
 
-if __name__ == "__main__":
-    main()
+    cntr = len([i for i in os.listdir(DIR) if image_type in i]) + 1
+    print (cntr)
+    if len(Type)==0:
+        f = open(os.path.join(DIR , image_type + "_"+ str(cntr)+".jpg"), 'wb')
+    else :
+        f = open(os.path.join(DIR , image_type + "_"+ str(cntr)+"."+Type), 'wb')
+
+
+    f.write(raw_img)
+    f.close()
+    # except Exception as e:
+    #     print ("could not load : "+img)
+    #     print (e)
