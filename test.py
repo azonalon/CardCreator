@@ -1,57 +1,84 @@
-from bs4 import BeautifulSoup
-import requests
-import re
-import urllib
-import os
-import json
-import sys
+#!/bin/python
+from PyQt5 import QtCore, QtWidgets, QtGui, uic
+import lxml
+import lxml.html
+from PIL import Image
 
-def get_soup(url,header):
-    return BeautifulSoup(urllib.request.urlopen(urllib.request.Request(url,headers=header)),'html.parser')
+im = Image.open("./Pictures/hi/ActiOn_10.png")
+app = QtWidgets.QApplication([])
+te = QtWidgets.QTextEdit()
+te.setLayout(QtWidgets.QGridLayout())
+te.document().setDefaultStyleSheet( """
+    body {color: green;}
+    image {max-width: 10px;}
+    """)
+b = QtWidgets.QPushButton('MyButton')
+te.insertHtml("<body> test123 </body>")
+te.insertHtml('<image><img src="./Pictures/hi/ActiOn_10.png"></image>')
+print(te.toHtml())
+te.layout().addWidget(b)
+te.show()
+app.exec_()
 
+def addNote():
+    import sys; sys.path.append('/home/eduard/software/anki/')
+    import anki
+    ankiHome = '/home/eduard/Documents/Anki/Heinz/'
+    print('before import', sys.path)
+    col = anki.Collection(ankiHome + 'collection.anki2')
+    print('after import', sys.path)
+    col.save()
+    vocabDeck = col.decks.byName('Tango')
+    vocabModel = col.models.byName("Japanese Vocabulary R&R")
+    col.models.setCurrent(vocabModel)
+    col.decks.select(vocabDeck['id'])
+    deck = col.decks.get(vocabDeck['id'])
+    deck['mid'] = vocabModel['id']
+    col.decks.save(deck)
+    newNote = col.newNote()
+    col.cardCount()
+    ## Expression
+    newNote['Expression'] = '龍'
+    ## Meaning
+    newNote['Meaning'] = 'Drache'
+    ## Reading
+    newNote['Reading'] = '龍[りゅう]'
+    ## Example Sentence
+    newNote['Example Sentence'] = '龍は空を飛ぶ'
+    ## Translation
+    newNote['Translation'] = 'Der Drache steigt den Himmel hinauf.'
+    ## Graphic
+    newNote['Graphic']  = '<img src="dragon.jpg" />'
+    if newNote.dupeOrEmpty() == 2:
+        print("Card is a duplicate")
+    else:
+        col.addNote(newNote)
+    col.close()
+    #%%
 
-query = sys.argv[1] #raw_input("query image")# you can change the query for the image  here
-image_type="ActiOn"
-query= query.split()
-query='+'.join(query)
-url="https://www.google.co.in/search?q="+query+"&source=lnms&tbm=isch"
-print(url)
-#add the directory for your image here
-DIR="Pictures"
-header={'User-Agent':"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36"
-}
-soup = get_soup(url,header)
+def ankiTest():
+    import sys; sys.path.append('/home/eduard/software/anki/')
+    import anki
+    ankiHome = '/home/eduard/Documents/Anki/Karl/'
+    try:
+        col = anki.Collection(ankiHome + 'collection.anki2')
+    except:
+        print("Collection is probably locked, please close Anki first.")
+        return
+    vocabDeck = col.decks.byName('Basic')
+    col.decks.allNames()
+    print(vocabDeck)
+    vocabModel = col.models.byName("Basic (and reversed card)")
+    print(vocabModel)
+    col.models.setCurrent(vocabModel)
+    col.decks.select(vocabDeck['id'])
+    deck = col.decks.get(vocabDeck['id'])
+    deck['mid'] = vocabModel['id']
+    col.decks.save(deck)
 
-
-ActualImages=[]# contains the link for Large original images, type of  image
-for a in soup.find_all("div",{"class":"rg_meta"}):
-    link , Type =json.loads(a.text)["ou"]  ,json.loads(a.text)["ity"]
-    ActualImages.append((link,Type))
-
-print  ("there are total" , len(ActualImages),"images")
-
-if not os.path.exists(DIR):
-            os.mkdir(DIR)
-DIR = os.path.join(DIR, query.split()[0])
-
-if not os.path.exists(DIR):
-            os.mkdir(DIR)
-###print images
-for i , (img , Type) in enumerate( ActualImages):
-    # try:
-    req = urllib.request.Request(img, headers={'User-Agent' : header})
-    raw_img = urllib.request.urlopen(req).read()
-
-    cntr = len([i for i in os.listdir(DIR) if image_type in i]) + 1
-    print (cntr)
-    if len(Type)==0:
-        f = open(os.path.join(DIR , image_type + "_"+ str(cntr)+".jpg"), 'wb')
-    else :
-        f = open(os.path.join(DIR , image_type + "_"+ str(cntr)+"."+Type), 'wb')
-
-
-    f.write(raw_img)
-    f.close()
-    # except Exception as e:
-    #     print ("could not load : "+img)
-    #     print (e)
+    newNote = col.newNote()
+    newNote['Front'] = 'Guess What?'
+    newNote['Back'] = 'Im cool!'
+    col.addNote(newNote)
+    col.close()
+    #%%
