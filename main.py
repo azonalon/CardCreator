@@ -1,24 +1,17 @@
 #!/bin/python
-from GetImageLinks import ImageLinkFetcher
-import urllib.parse
-from urllib.parse import urlparse
 from PIL import Image
-from multiprocessing import Process
-# from selenium.webdriver.common.keys import Keys
 import re
 import os
-import urllib
 import sys
-import time
 import lxml
-import lxml.html
-import io
+import tempfile
 import Hurigana
-import requests
 from InputField import InputField
 from PyQt5 import QtCore, QtWidgets, QtGui, uic
+import argparse
+from ImageScraper import ImageScraper
 
-QtWidgets.QStyleFactory.keys()
+# QtGui.QImageWriter.supportsOption(QtGui.QImageIOHandler.Description)
 
 f = open('./imageViewer_ui.py', 'w')
 uic.compileUi('./imageViewer.ui', f)
@@ -27,87 +20,19 @@ import imageViewer_ui
 uiImageLoader = imageViewer_ui.Ui_Form
 
 
-class ImageLoader(QtCore.QObject):
-    hasImage = QtCore.pyqtSignal(bytes, str, str)
-    sigFinished = QtCore.pyqtSignal()
-    extensions = {"jpg", "jpeg", "png", "gif"}
-
-    def __init__(self):
-        QtCore.QObject.__init__(self)
-        self.query = ''
-        self.count = 0
-        self.nAcquired = 0
-        self.threads = []
-
-    def _getImage(self, imgUrl, imgType):
-        if imgType not in self.extensions:
-            imgType = "jpg"
-        if self.nAcquired == self.count:
-            self.sigFinished.emit()
-            for t in self.threads:
-                if t.is_alive():
-                    t.terminate()
-            return
-        try:
-            name = os.path.basename(urlparse(imgUrl).path)
-            imageBytes = urllib.request.urlopen(imgUrl, timeout=1).read()
-            self.hasImage.emit(imageBytes, imgType, urllib.parse.unquote(name))
-            self.nAcquired += 1
-        except:
-            pass
-
-    def _requestImages(self):
-        self.nAcquired = 0
-        fetcher = ImageLinkFetcher()
-        fetcher.sigLinksReady.connect(self._onImageLinksFetched)
-        fetcher.requestImageLinks(self.query, self.count)
-
-    def _onImageLinksFetched(self, imges):
-        for i, (imgUrl, imgType) in enumerate(imges):
-            # print(imgUrl, imgType)
-            t = Process(target=lambda: self._getImage(imgUrl, imgType))
-            self.threads.append(t)
-            t.run()
-
-
-class AsyncImageLoader(ImageLoader):
-    def __init__(self):
-        super().__init__()
-        self.thread = QtCore.QThread()
-        self.moveToThread(self.thread)
-        self.thread.started.connect(self._requestImages)
-        self.sigFinished.connect(lambda: self.thread.quit())
-
-    def requestImages(self, query, count):
-        self.query = query
-        self.count = count
-        self.thread.start()
-
-
-class PictureItem(QtWidgets.QListWidgetItem):
-    def __init__(self, imageBytes, imageType, name):
-        pixmap = QtGui.QPixmap()
-        self.name = name
-        self.type = imageType
-        pixmap.loadFromData(imageBytes)
-        self.imageBytes = imageBytes
-        super().__init__(QtGui.QIcon(pixmap), name)
-
-
 class MainWidget(QtWidgets.QWidget, uiImageLoader):
     colors = {"warning": "#f2e394",
               "error"  : "#f2ae72",
               "white"  : "#FFFFFF"}
     imageMaxWidth = 400
-    def __init__(self, app):
+    def __init__(self, app, args):
         super(QtWidgets.QWidget, self).__init__()
         # self.col = None
         self.setupUi(self)
         self.col = self.getCollection()
         # self.imageList.setIconSize(QtCore.QSize(200, 200))
-        self.imageLoader = AsyncImageLoader()
-        self.imageLoader.hasImage.connect(self.onImageAcquired)
         self.stagedPictures = {}
+        self.args = args
         self.inputFields = [self.teExpression, self.teMeaning,
                             self.teReading, self.teExampleSentence,
                             self.teTranslation, self.tePicture]
@@ -121,13 +46,22 @@ class MainWidget(QtWidgets.QWidget, uiImageLoader):
 
         app.aboutToQuit.connect(self.clearFields)
 
+    def onItemDropped(self, data):
+        print("Where in main dropped function!")
+        if data.hasImage():
+            print("Picture in Drop!")
+            self.insertPicture(data.imageData())
+        elif data.hasText():
+            self.sender().insertPlainText(data.text())
+
     def initHandlers(self):
-        self.bSearchImage.clicked.connect(self.getImages)
+        # self.bSearchImage.clicked.connect(self.getImages)
         self.bAddNote.clicked.connect(self.addNote)
         for field in self.inputFields:
             field.ctrlEnterPressed.connect(self.addNote)
+            field.itemDropped.connect(self.onItemDropped)
         self.teExpression.focusLost.connect(lambda: self.checkNote(self.makeNote()))
-        self.bTakeFromList.clicked.connect(self.takeImageFromList)
+        # self.bTakeFromList.clicked.connect(self.takeImageFromList)
         self.bExpressionAddReading.clicked.connect(
             lambda: self.addReading(self.teExpression,
                                     self.teReading)
@@ -136,6 +70,34 @@ class MainWidget(QtWidgets.QWidget, uiImageLoader):
             lambda: self.addReading(self.teExampleSentence,
                                     self.teExampleSentence)
             )
+        self.cbExampleSearchMethod.setItemData(0, "alc")
+        self.cbExampleSearchMethod.setItemData(1, "tatoeba")
+        self.bSearchExampleSentence.clicked.connect(self.searchExamples)
+        self.examplesList.customContextMenuRequested.connect(self.examplesListCustomContextMenuEvent)
+
+    def insertExampleSentence(self, sentence, translation):
+        self.teTranslation.append(translation)
+        self.teExampleSentence.append(sentence)
+
+    def examplesListCustomContextMenuEvent(self, pos):
+        menu = QtWidgets.QMenu("My menu, ha!")
+        action = QtWidgets.QAction("Use in note")
+        row = self.examplesList.indexAt(pos).row()
+        print(row)
+        if row == -1:
+            return
+        sentence = self.examplesList.model().index(row, 0).data()
+        translation = self.examplesList.model().index(row, 1).data()
+        action.triggered.connect(
+            lambda: self.insertExampleSentence(sentence, translation)
+        )
+        menu.addAction(action)
+        menu.exec_(QtGui.QCursor.pos())
+
+    def searchExamples(self):
+        method = self.cbExampleSearchMethod.currentData()
+        print(method)
+        self.examplesList.loadSentences(self.teExpression.toPlainText(), method=method)
 
     def addReading(self, sourceEdit, targetEdit):
         expression = sourceEdit.toPlainText()
@@ -145,18 +107,19 @@ class MainWidget(QtWidgets.QWidget, uiImageLoader):
         targetEdit.setHtml(result)
 
     def initUi(self):
-        self.teExpression.insertHtml("龍")
-        self.teMeaning.insertHtml('Drache')
-        self.teReading.insertPlainText('')
-        self.teExampleSentence.insertHtml('龍は空を飛ぶ')
-        self.teTranslation.insertHtml('Der Drache steigt den Himmel hinauf.')
-        self.insertPicture(open('dragon.jpg', 'rb').read(), 'jpg', 'dragon')
+        if self.args.debug:
+            self.teExpression.insertHtml("龍")
+            self.teMeaning.insertHtml('Drache')
+            self.teReading.insertPlainText('')
+            self.teExampleSentence.insertHtml('龍は空を飛ぶ')
+            self.teTranslation.insertHtml('Der Drache steigt den Himmel hinauf.')
+            self.insertPicture(open('dragon.jpg', 'rb').read(), 'jpg', 'dragon')
 
     def getCollection(self):
         if 'anki' not in globals():
             import sys; sys.path.append('/home/eduard/software/anki/')
             import anki
-            ankiHome = '/home/eduard/Documents/Anki/Heinz/'
+            ankiHome = '/home/eduard/Documents/Anki/Eduard/'
             try:
                 col = anki.Collection(ankiHome + 'collection.anki2')
                 ### changes cwd to /path/to/collection.media/
@@ -222,30 +185,26 @@ class MainWidget(QtWidgets.QWidget, uiImageLoader):
             self.infoMessage('Card Valid.')
         return isValid
 
-    def takeImageFromList(self):
-        item = self.lwImages.currentItem()
-        self.insertPicture(item.imageBytes, item.type, item.name)
+    # def takeImageFromList(self):
+    #     item = self.lwImages.currentItem()
+    #     self.insertPicture(item.imageBytes, item.type, item.name)
 
-    def insertPicture(self, rawBytes, imageType, name):
-        self.stagedPictures[name + '.' + imageType] = (rawBytes, imageType)
-        f = io.BytesIO(rawBytes)
-        im = Image.open(f)
-        w, h = im.size
-        aspect = w/h
-        wr = min(w, self.imageMaxWidth)
-        hr = round(wr/aspect)
-        if wr < w:
-            # print(wr, hr)
-            im = im.resize((wr, hr), resample=Image.LANCZOS)
-        im.save(name + '.' + imageType)
-        # with open(name + '.' + imageType, 'wb') as f:
-        #     f.write(rawBytes)
-        self.tePicture.insertHtml('<img src="%s.%s" class="Image"/>' % (name, imageType))
-        # self.tePicture.insertHtml('<div> Hello World </div>')
-        # import pdb; pdb.set_trace()
-        # print(self.tePicture.document().defaultStyleSheet())
-        # print(self.tePicture.document().toHtml())
-        # print(self.tePicture.toHtml())
+    def insertPicture(self, qimage):
+        # f = io.BytesIO(rawBytes)
+        # im = Image.open(f)
+        # w, h = im.size
+        # aspect = w/h
+        # wr = min(w, self.imageMaxWidth)
+        # hr = round(wr/aspect)
+        # if wr < w:
+        #     im = im.resize((wr, hr), resample=Image.LANCZOS)
+        imageType = 'jpg'
+        newName = os.path.basename(
+            tempfile.mkstemp(prefix='pic_', dir='.')[1] )
+
+        qimage.save(newName + '.' + imageType)
+        self.stagedPictures[newName + '.' + imageType] = qimage
+        self.tePicture.insertHtml('<img src="%s.%s" class="Image"/>' % (newName, imageType))
 
     def saveStagedPictures(self, note):
         tree = lxml.html.fromstring(self.tePicture.toHtml())
@@ -268,23 +227,23 @@ class MainWidget(QtWidgets.QWidget, uiImageLoader):
     def infoMessage(self, str):
         self.leInfo.setText(str)
 
-    def getImages(self):
-        source = self.cbSearchSource.currentText()
-        self.lwImages.clear()
-        query = {'Custom': self.leCustomQuery.text(),
-                 'Expression': self.teExpression.toPlainText(),
-                 'Meaning': self.teMeaning.toPlainText()
-                 }[source]
-        count = 10
-        self.imageLoader.requestImages(query, count)
+    # def getImages(self):
+    #     source = self.cbSearchSource.currentText()
+    #     self.lwImages.clear()
+    #     query = {'Custom': self.leCustomQuery.text(),
+    #              'Expression': self.teExpression.toPlainText(),
+    #              'Meaning': self.teMeaning.toPlainText()
+    #              }[source]
+    #     count = 10
+    #     self.imageLoader.requestImages(query, count)
 
-    def onImageAcquired(self, imageBytes, imageType, name):
-        self.lwImages.addItem(PictureItem(imageBytes, imageType, name))
-
-    def loadTestImages(self):
-        import glob
-        for f in glob.glob('./Pictures/hi/*.jpg'):
-            self.lwImages.addItem(PictureItem(open(f, 'rb').read(), f), 'jpg', 'name')
+    # def onImageAcquired(self, imageBytes, imageType, name):
+    #     self.lwImages.addItem(PictureItem(imageBytes, imageType, name))
+    #
+    # def loadTestImages(self):
+    #     import glob
+    #     for f in glob.glob('./Pictures/hi/*.jpg'):
+    #         self.lwImages.addItem(PictureItem(open(f, 'rb').read(), f), 'jpg', 'name')
 
     def _escapeHtml(self, htmlString):
         """
@@ -304,13 +263,18 @@ class MainWidget(QtWidgets.QWidget, uiImageLoader):
 
 def main():
     from UnixSignals import setupQuitOnSignal
+    # print(searchTatoebaExamples("雨"))
     setupQuitOnSignal()
     app = QtWidgets.QApplication(sys.argv)
+    parser = argparse.ArgumentParser("Creates Cards for Anki")
+    parser.add_argument("--debug", dest='debug', action='store_const',
+                        default=False, const=True)
+    args = parser.parse_args()
     # timer = QtCore.QTimer()
     # timer.setSingleShot(True)
     # timer.timeout.connect(lambda: win.scrapeImages(sys.argv[1], 5))
-    win = MainWidget(app)
-    win.loadTestImages()
+    win = MainWidget(app, args=args)
+    # win.loadTestImages()
     win.show()
     # timer.start(0)
     app.exec_()

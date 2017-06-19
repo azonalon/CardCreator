@@ -2,6 +2,7 @@ from PyQt5 import QtCore, QtWidgets, QtGui, uic
 class InputField(QtWidgets.QTextEdit):
     focusLost = QtCore.pyqtSignal()
     ctrlEnterPressed = QtCore.pyqtSignal()
+    itemDropped = QtCore.pyqtSignal(QtCore.QMimeData)
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.textChanged.connect(self.updateGeometry)
@@ -16,6 +17,14 @@ class InputField(QtWidgets.QTextEdit):
     def focusOutEvent(self, eventPointer):
         self.focusLost.emit()
         super().focusOutEvent(eventPointer)
+
+    def dropEvent(self, event):
+        print("something was dropped!")
+        self.itemDropped.emit(event.mimeData())
+    def insertFromMimeData(self, data):
+        print("something was inserted!")
+        self.itemDropped.emit(data)
+
 
     def keyPressEvent(self, qkeyevent):
         k = qkeyevent.key()

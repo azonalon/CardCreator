@@ -1,5 +1,4 @@
 import sys, os, platform, re
-import requests
 from subprocess import run, Popen, PIPE
 import urllib.request as request
 from lxml import etree
@@ -15,6 +14,8 @@ def reading(txt, method='kakasi'):
         return rubyReading(txt)
 
 def rubyReading(txt):
+    if txt is "":
+        return ""
     YAHOO_APP_ID="dj0zaiZpPWFpRG1LdFFua1dHbSZzPWNvbnN1bWVyc2VjcmV0Jng9NTk-"
     txt = urllib.parse.quote(txt)
     url = "https://jlp.yahooapis.jp/FuriganaService/V1/furigana?appid=" + YAHOO_APP_ID + "&grade=1&sentence=" + txt
