@@ -104,6 +104,7 @@ class MainWidget(QtWidgets.QWidget, uiImageLoader):
         expression = re.sub(r"\[\w*\]", "", expression)
         # print(expression, len(expression))
         result = Hurigana.reading(expression, method='ruby')
+        result = re.sub(r"\]", "] ", result)
         targetEdit.setHtml(result)
 
     def initUi(self):

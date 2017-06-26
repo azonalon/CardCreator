@@ -38,7 +38,7 @@ def rubyReading(txt):
                 else:
                     sentence += sw[0].text + '[' + sw[1].text + ']'
         elif furigana is not None:
-            sentence += surface.text + '[' + furigana.text + ']'
+            sentence += " " + surface.text + '[' + furigana.text + ']' + " "
         else:
             sentence += surface.text
     return sentence
