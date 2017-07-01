@@ -27,7 +27,8 @@ def saveTo(sourceBytes, target):
         f.write(sourceBytes)
 
 def getResponseCookiesString(requestResult):
-    cookies = [t[1].split(';')[0] for t in requestResult.getheaders() if t[0] == 'Set-Cookie' ]
+    cookies = [t[1].split(';')[0] for t in requestResult.getheaders()
+               if t[0] == 'Set-Cookie' ]
     cookies = '; '.join(cookies)
     return cookies
 #%%
@@ -38,6 +39,7 @@ class AsyncAlkScraper(QtCore.QThread):
     hasSentences = QtCore.pyqtSignal(list)
     needLogin = QtCore.pyqtSignal()
     login = QtCore.pyqtSignal(tuple)
+    loginFinished = QtCore.pyqtSignal(bool)
 
     def __init__(self):
         super().__init__()
@@ -52,8 +54,13 @@ class AsyncAlkScraper(QtCore.QThread):
             self.needLogin.emit()
 
     def onLogin(self, usernamePassword):
-        self.worker.login(usernamePassword)
-        self.loggedIn = True
+        try:
+            self.worker.login(usernamePassword)
+            self.loggedIn = True
+            self.loginFinished.emit(True)
+        except:
+            self.loginFinished.emit(False)
+
     def run(self):
         self.requestSentences.connect(self.onRequest)
         self.login.connect(self.onLogin)
@@ -72,23 +79,30 @@ class AlkScraper(QtCore.QObject):
         super().__init__()
 
     def login(self, usernamePassword = None):
-        # self.parent().setStatusTip("Logging into Alk...")
         if usernamePassword is not None:
             self.alcLoginFormData = urlencode({"username": usernamePassword[0],
                                                "password": usernamePassword[1],
                                                "login-form-type": "pwd"
                                                })
 
-        print(self.alcLoginFormData)
         loginUrl = "https://eowpf.alc.co.jp/pkmslogin.form?token=Unknown"
-        req = request.Request(loginUrl, data=self.alcLoginFormData.encode(), method='POST')
+        req = request.Request(loginUrl, data=self.alcLoginFormData.encode(),
+                              method='POST')
         result = request.urlopen(req)
         # print(*result.getheaders(), sep='\n')
         cookies = getResponseCookiesString(result)
 
-        req2 = request.Request(self.alcQueryUrl + "%E6%AF%8D", headers={'Cookie': cookies}, method='POST')
+        if not 'LtpaToken2' in cookies:
+            print("Wrong Login to Alc!")
+            raise Exception("Wrong login Data")
+
+        print('cookies A', cookies)
+
+        req2 = request.Request(self.alcQueryUrl + "%E6%AF%8D",
+                               headers={'Cookie': cookies}, method='POST')
         result2 = request.urlopen(req2)
         cookies += "; " + getResponseCookiesString(result2)
+        print('cookies B', cookies)
         print("logged in")
         self.cookies = cookies
 
@@ -286,12 +300,13 @@ def searchTatoebaExamples(query):
 if __name__ == '__main__':
     from UnixSignals import setupQuitOnSignal; setupQuitOnSignal()
     app = QtCore.QCoreApplication([])
-    s = AsyncAlkScraper()
-    qtimer = QtCore.QTimer()
-    qtimer.setSingleShot(True)
-    qtimer.timeout.connect(lambda: s.requestSentences.emit("龍"))
-    qtimer.start(20)
-    app.exec_()
+    s = AlkScraper()
+    s.login(('sauter.eduard@gmail.com', 'amt1415'))
+    # qtimer = QtCore.QTimer()
+    # qtimer.setSingleShot(True)
+    # qtimer.timeout.connect(lambda: s.requestSentences.emit("龍"))
+    # qtimer.start(20)
+    # app.exec_()
     # print(s.searchExamples("ごめんなさい"))
     # print(s.searchExamples("heureka"))
     # print(s.searchExamples("午後ご午後"))

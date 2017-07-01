@@ -4,16 +4,23 @@ from PyQt5 import QtWidgets, QtCore, QtGui
 from PyQt5.QtCore import Qt
 from InputField import InputField
 import sys
+import os
+import json
 
 class LoginDialog(QtWidgets.QDialog):
     def __init__(self):
         super().__init__()
+        self.savedLogin = os.path.dirname(__file__) + "/userdata/alcLogin.json"
         self.setLayout(QtWidgets.QGridLayout())
+        if os.path.exists(self.savedLogin):
+            loginData = json.load(open(self.savedLogin))
+        else:
+            loginData = {'username': '', 'password': ''}
         self.layout().addWidget(QtWidgets.QLabel("Please enter Alc username"
                                                  " and password."), 0, 0, 1, 2)
-        self.ue = QtWidgets.QLineEdit()
+        self.ue = QtWidgets.QLineEdit(loginData['username'])
         self.layout().addWidget(self.ue, 1, 0, 1, 2)
-        self.pe = QtWidgets.QLineEdit()
+        self.pe = QtWidgets.QLineEdit(loginData['password'])
         self.pe.setEchoMode(QtWidgets.QLineEdit.Password)
         self.layout().addWidget(self.pe , 2, 0, 1, 2)
         bOk = QtWidgets.QPushButton("Accept")
@@ -22,6 +29,9 @@ class LoginDialog(QtWidgets.QDialog):
     def onAccept(self):
         self.username = self.ue.text()
         self.password = self.pe.text()
+        with open(self.savedLogin, 'w') as f:
+            json.dump({'username': self.username,
+                       'password': self.password}, f)
         self.done(True)
 
 class ExampleSentenceListModel(QtGui.QStandardItemModel):

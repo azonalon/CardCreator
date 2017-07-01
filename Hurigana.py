@@ -4,6 +4,7 @@ import urllib.request as request
 from lxml import etree
 import html
 import urllib.parse
+import http.cookiejar
 
 def reading(txt, method='kakasi'):
     if method is 'kakasi':
@@ -13,13 +14,17 @@ def reading(txt, method='kakasi'):
     elif method is 'ruby':
         return rubyReading(txt)
 
+header={'User-Agent':"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36" }
+
 def rubyReading(txt):
     if txt is "":
         return ""
     YAHOO_APP_ID="dj0zaiZpPWFpRG1LdFFua1dHbSZzPWNvbnN1bWVyc2VjcmV0Jng9NTk-"
     txt = urllib.parse.quote(txt)
-    url = "https://jlp.yahooapis.jp/FuriganaService/V1/furigana?appid=" + YAHOO_APP_ID + "&grade=1&sentence=" + txt
-    result = request.urlopen(url)
+    url = "http://jlp.yahooapis.jp/FuriganaService/V1/furigana?appid=" + YAHOO_APP_ID + "&grade=1&sentence=" + txt
+    r = request.Request(url,headers=header)
+
+    result = request.urlopen(r)
     tree = etree.parse(result)
     with open("test.xml", 'wb') as f:
         f.write(etree.tostring(tree, pretty_print=True, encoding='utf-8'))
@@ -34,9 +39,9 @@ def rubyReading(txt):
         if subwordList is not None:
             for sw in subwordList:
                 if sw[0].text == sw[1].text:
-                    sentence += sw[0].text
+                    sentence += " " + sw[0].text
                 else:
-                    sentence += sw[0].text + '[' + sw[1].text + ']'
+                    sentence += " " + sw[0].text + '[' + sw[1].text + ']'
         elif furigana is not None:
             sentence += " " + surface.text + '[' + furigana.text + ']' + " "
         else:
