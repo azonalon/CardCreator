@@ -35,7 +35,7 @@ class HuriganaWorker():
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
-        w = HuriganaWorker(json.loads(sys.argv[2]))
+        w = HuriganaWorker(json.loads(sys.argv[1]))
         w.run()
 
     ankiHome = '/home/eduard/Documents/Anki/Eduard/'
@@ -46,7 +46,7 @@ if __name__ == "__main__":
     while i < len(notes):
         try:
             s = partOfList(50 * i, 50 * (i+1))
-            w = sp.run(['python', 'AnkiProcedures.py', json.dumps(s)],
+            w = sp.run(['python', './AnkiProcedures.py', json.dumps(s)],
                         check=True)
             result = json.loads(w.stdout)
             print("got result", result)
