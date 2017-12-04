@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Language" content="ja" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<title>ログイン｜アルク</title>
+<link rel="stylesheet" href="https://cdn2.alc.co.jp/common/css/response2.css" type="text/css" />
+<!--<link rel="stylesheet" href="css/response2.css" type="text/css">-->
+
+
+
+<script type="text/javascript">
+
+	 var url = location.href;
+
+	 if ( !url.match(/^https:/) ) {
+	     url = url.replace( /^[^:]+:/, "https:" );
+	     location.href = url;
+	 }
+
+	var warningString = "&lt;B&gt;警告:&lt;/B&gt; ログイン・セッションを維持するには、ご使用のブラウザーが Cookies を受け入れるよう構成されていることを確認してください。";
+	document.cookie = 'acceptsCookies=yes';
+	if(document.cookie == ''){
+		document.write(warningString);
+	}else{
+		document.cookie = 'acceptsCookies=yes; expires=Fri, 13-Apr-1970 00:00:00 GMT';
+		// Uncomment the following line for JavaScript redirection
+	 	document.cookie = 'ISAMOriginalURL=' + encodeURIComponent(window.location) + "; Path=/;";
+	}
+
+	function check(){
+
+	    if (document.form1.username.value == '') {
+	         alert("メールアドレスIDが未入力です。");
+	         return false;
+	    }else if(document.form1.password.value == '') {
+	         alert("パスワードが未入力です。");
+	         return false;
+		}else{
+			if(document.form1.checkbox.checked == true){
+				var name2 = "alconid";
+				var period = 1;
+
+				var cookie_value = unescape("autologin");
+
+				var nowtime = new Date().getTime();
+				var clear_time = new Date(nowtime + (60 * 60 * 24 * 1000 * period));
+				var expires = clear_time.toGMTString();
+
+				document.cookie = name2 + "=" + escape(cookie_value) + "; domain=alc.co.jp ; path=/ ; expires=" + expires;
+			}
+			return true;
+		}
+	}
+
+	window.onload = function go_to_https() {
+
+		/* Error Message */
+		errmsg = document.getElementById("message");
+		if(errmsg.innerHTML==""){
+		}else if(errmsg.innerHTML=="&lt;b&gt;&lt;/b&gt;"){
+		}else{
+			errmsg.innerHTML="&lt;b&gt;IDかパスワードに誤りがあります。→&lt;a href=\http://www.alc.co.jp/login_help.html\&gt;ヘルプを見る&lt;/a&gt;&lt;/b&gt;";
+		}
+	}
+
+</script>
+
+<style>
+&lt;!--
+body {
+    max-width:950px;
+    width: 100%;
+    margin:0 auto;
+    font-size:14px;
+    position: relative;
+}
+--&gt;
+</style>
+<script type="text/javascript">window._pt_lt = new Date().getTime();</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+
+<div id="header">
+  <div id="headerIn">
+    <p id="logo">
+      <a href="http://www.alc.co.jp/">
+        <img alt="ALC アルク www.alc.co.jp" src="https://cdn2.alc.co.jp/common/img/head_logo.png" />
+      </a>
+    </p>
+  </div>
+</div><!-- /#header -->
+
+<h2 class="headerLine"></h2>
+
+<p class="pass_update"><font color="#00000"><a href="http://www.alc.co.jp/tg/eowf/">「英辞郎 on the WEB Pro」（Lite版／有料版）</a>は、以下のサービスをご利用時のメールアドレスIDでお使いいただけます。<br />
+【対象ウェブサービス：オンライショッピング、テストコ、アルコムワールド、ダウンロードセンターなど】</font><br />
+※アルクのID をお持ちでない方は、<a href="https://user.alc.co.jp/general/member/index">新規登録（無料）</a>からお進みください。</p>
+<p id="message" style="color:#F00;"><b></b></p> 
+
+<div class="clearfix">
+<table class="login-table" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <!-- ログインフォーム -->
+    <td class="login-body">
+      <form method="post" action="/pkmslogin.form?token=Unknown" name="form1" onsubmit="return check()" id="form1">
+      <div class="login-body-inner">
+      <font size="+2">
+        <h3 class="login-form-title">ログイン</h3>
+        <div class="login-form-content">
+        <table class="login-input-table" border="0" cellspacing="0" cellpadding="3">
+          <tr>
+            <td class="input-item-title" style="font-size:18px;">
+              <span>メールアドレスID</span>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <input class="fInput" name="username" size="25" />
+            </td>
+          </tr>
+          <tr>
+          </tr>
+          <tr>
+            <td class="input-item-title" style="font-size:18px;"><span>パスワード</span></td>
+          </tr>
+          <tr>
+            <td valign="top">
+              <input class="fInput" type="password" name="password" size="25" autocomplete="off" />
+            </td>
+          </tr>
+        </table>
+      
+      <br />
+     <label><input type="checkbox" name="checkbox" />次回から自動的にログインする</label>
+      <br />
+      <p>
+        ※共有PCではチェックを外してください。<br />
+        ※一定期間アクセスがない場合は、再入力が必要になります。
+      </p>
+      <input type="hidden" name="login-form-type" value="pwd" />
+      <br />
+      <div class="login-btn">
+        <input id="submit_button" type="submit" name="submit" value="ログイン" />
+      </div>
+      
+      <p class="login_remaind_link" align="center">
+        <a href="https://user.alc.co.jp/reminder/member/index">※パスワードを忘れた方はこちら（再設定）</a><br />
+      </p>
+      
+      </div>
+      
+    </font></div></form></td>
+  </tr>
+</table>
+
+<table class="regist-table" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <!-- 新規登録 -->
+    <td class="regist-body" valign="top">
+      <div class="regist-area">
+        <div class="regist-title">
+          <b>新規登録（無料）</b>
+        </div>
+        <div class="regist-content">
+        新規登録いただくと、登録者限定サービスが無料で使えます。<a href="http://www.alc.co.jp/first/merit/alc_merit.html" target="_blank">詳しくはこちら</a>
+
+        <p align="center">
+          <a href="https://user.alc.co.jp/general/member/index">
+            <img src="https://cdn2.alc.co.jp/common/img/btn_regist.png" alt="新規ユーザー登録" border="0" />
+          </a>
+        </p>
+        
+        </div>
+      </div>
+
+      <div class="regist-title">
+        <b>お問い合わせ</b>
+      </div>
+      <div class="regist-content">
+      <p align="center">
+        <a href="http://www.alc.co.jp/inquiry/ ">
+          <img src="https://cdn2.alc.co.jp/common/img/btn_contact.png" alt="webからのお問い合わせ" border="0" />
+        </a>
+      </p>
+      
+      </div>
+    </td>
+  </tr>
+
+  <tr>
+    <td height="37" align="center">
+      <span id="ss_gmo_img_wrapper_100-50_image_ja"><a href="https://jp.globalsign.com/" target="_blank" rel="nofollow"><img alt="SSL　GMOグローバルサインのサイトシール" border="0" id="ss_img" src="//seal.globalsign.com/SiteSeal/images/gs_noscript_100-50_ja.gif" /></a></span><script type="text/javascript" src="//seal.globalsign.com/SiteSeal/gmogs_image_100-50_ja.js" defer="defer"></script>
+<p><span style="font-size:10px">このページはSSL対応により、お客様の個人情報は暗号化して送信されます。</span></p>
+      
+    </td>
+  </tr>
+
+</table>
+</div>
+<br />
+<br />
+
+<div id="copy">© Copyright ALC PRESS INC. All Rights Reserved.</div>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TVDR9W" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TVDR9W');</script>
+<!-- End Google Tag Manager -->
+
+<!-- New Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TKK8PX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TKK8PX');</script>
+<!-- End Google Tag Manager -->
+
+<!-- PT Engine -->
+<script type="text/javascript">
+window._pt_sp_2 = [];
+_pt_sp_2.push('setAccount,55a4a759');
+var _protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+
+(function() {
+var atag = document.createElement('script'); atag.type = 'text/javascript'; atag.async = true;
+atag.src = _protocol + 'js.ptengine.jp/pta.js';
+var stag = document.createElement('script'); stag.type = 'text/javascript'; stag.async = true;
+stag.src = _protocol + 'js.ptengine.jp/pts.js';
+var s = document.getElementsByTagName('script')[0];  
+s.parentNode.insertBefore(atag, s);s.parentNode.insertBefore(stag, s);
+})();
+</script>
+<!-- End PT Engine -->
+</body>
+</html>

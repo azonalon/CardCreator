@@ -1,0 +1,2200 @@
+1,一,eins,one
+2,二,zwei,two
+3,三,drei,three
+4,四,vier,four
+5,五,fünf,five
+6,六,sechs,six
+7,七,sieben,seven
+8,八,acht,eight
+9,九,neun,nine
+10,十,zehn,ten
+11,口,Mund,mouth
+12,日,Tag,day
+13,月,Monat,month
+14,田,Reisfeld,rice field
+15,目,Auge,eye
+16,古,alt,old
+17,吾,Ich,I
+18,冒,riskieren,risk
+19,朋,Gefährte,companion
+20,明,hell,bright
+21,唱,Gesang,chant
+22,晶,Kristall,sparkle
+23,品,Waren,goods
+24,呂,Rückgrat,spine
+25,昌,gedeihen,prosperous
+26,早,früh,early
+27,旭,aufgehende Sonne,rising sun
+28,世,Generation,generation
+29,胃,Magen,stomach
+30,旦,Morgendämmerung,nightbreak
+31,胆,Gallenblase,gall bladder
+32,亘,Spanne,span
+33,凹,Konkav,concave
+34,凸,Konvex,convex
+35,旧,alte Zeiten,olden times
+36,自,selbst,oneself
+37,白,weiß,white
+38,百,hundert,hundred
+39,中,in,in
+40,千,tausend,thousand
+41,舌,Zunge,tongue
+42,升,Messkästchen,measuring box
+43,昇,aufsteigen,rise up
+44,丸,rund,round
+45,寸,Längenmaß,measurement
+46,肘,Ellenbogen,elbow
+47,専,Spezialgebiet,specialty
+48,博,Dr.,Dr.
+49,占,Wahrsagen,fortune-telling
+50,上,auf,above
+51,下,unter,below
+52,卓,hervorragend,eminent
+53,朝,Morgen,morning
+54,嘲,Hohn,derision
+55,只,nur,only
+56,貝,Muschel,shellfish
+57,唄,Schlager,pop song
+58,貞,keusch,upright
+59,員,Mitglied,employee
+60,貼,aufkleben,post a bill
+61,見,sehen,see
+62,児,Säugling,newborn babe
+63,元,Anfang,beginning
+64,頁,Buchseite,page
+65,頑,hartnäckig,stubborn
+66,凡,durchschnittlich,mediocre
+67,負,unterliegen,defeat
+68,万,zehntausend,ten thousand
+69,句,Ausdruck,phrase
+70,肌,Oberfläche,texture
+71,旬,Zeitraum von zehn Tagen,decameron
+72,勺,Kelle,ladle
+73,的,Zielscheibe,bull's eye
+74,首,Hals,neck
+75,乙,delikat,fish guts
+76,乱,Aufruhr,riot
+77,直,direkt,straightaway
+78,具,Werkzeug,tool
+79,真,wahr,true
+80,工,Handwerk,craft
+81,左,links,left
+82,右,rechts,right
+83,有,besitzen,possess
+84,賄,Bestechung,bribe
+85,貢,Abgabe,tribute
+86,項,Abschnitt,paragraph
+87,刀,Schwert,sword
+88,刃,Klinge,blade
+89,切,schneiden,cut
+90,召,locken,seduce
+91,昭,gleißen,shining
+92,則,Regel,rule
+93,副,Vize-,vice-
+94,別,getrennt,separate
+95,丁,Häuserblock,street
+96,町,Stadt,village
+97,可,möglich,can
+98,頂,auf den Kopf,place on the head
+99,子,Kind,child
+100,孔,Ritze,cavity
+101,了,fertig,complete
+102,女,Frau,woman
+103,好,mögen,fond
+104,如,als ob,likeness
+105,母,Mama,mama
+106,貫,durchbohren,pierce
+107,兄,älterer Bruder,elder brother
+108,呪,Fluch,curse
+109,克,überwinden,overcome
+110,小,klein,little
+111,少,wenig,few
+112,大,groß,large
+113,多,viele,many
+114,夕,Abend,evening
+115,汐,abendliche Gezeiten,eventide
+116,外,draußen,outside
+117,名,Name,name
+118,石,Stein,stone
+119,肖,gleichen,resemblance
+120,硝,Salpeter,nitrate
+121,砕,zerschmettern,smash
+122,砂,Sand,sand
+123,妬,eifersüchtig,jealous
+124,削,hobeln,plane
+125,光,Licht,ray
+126,太,dick,plump
+127,器,Geschirr,utensil
+128,臭,übelriechend,stinking
+129,嗅,schnüffeln,sniff
+130,妙,bezaubernd,exquisite
+131,省,sich besinnen auf,focus
+132,厚,dicht,thick
+133,奇,seltsam,strange
+134,川,Fluß,stream
+135,州,Staat,state
+136,順,gehorchen,obey
+137,水,Wasser,water
+138,氷,Eiszapfen,icicle
+139,永,Ewigkeit,eternity
+140,泉,Springquell,spring
+141,腺,Drüse,gland
+142,原,Wiese,meadow
+143,願,Gesuch,petition
+144,泳,schwimmen,swim
+145,沼,Morast,marsh
+146,沖,offenes Meer,open sea
+147,汎,pan-,pan-
+148,江,Meeresarm,creek
+149,汰,aussortieren,cleanse
+150,汁,Suppe,soup
+151,沙,Sandkörner,grains of sand
+152,潮,Gezeiten,tide
+153,源,Quelle,source
+154,活,lebendig,lively
+155,消,löschen,extinguish
+156,況,Zustand,but of course
+157,河,Strom,river
+158,泊,übernachten,overnight
+159,湖,See,lake
+160,測,loten,fathom
+161,土,Erde,soil
+162,吐,spucken,spit
+163,圧,Druck,pressure
+164,埼,Kap,cape
+165,垣,Hecke,hedge
+166,填,einlegen,inlay
+167,圭,eckiger Edelstein,squared jewel
+168,封,Siegel,seal
+169,涯,Horizont,horizon
+170,寺,buddhistischer Tempel,Buddhist temple
+171,時,Zeit,time
+172,均,ebnen,level
+173,火,Feuer,fire
+174,炎,entzünden,inflammation
+175,煩,Sorgen,anxiety
+176,淡,blass,thin
+177,灯,Lampe,lamp
+178,畑,Acker,farm
+179,災,Katastrophe,disaster
+180,灰,Asche,ashes
+181,点,Punkt,spot
+182,照,scheinen,illuminate
+183,魚,Fisch,fish
+184,漁,Fischfang,fishing
+185,里,ri,ri
+186,黒,schwarz,black
+187,墨,Tusche,black ink
+188,鯉,Karpfen,carp
+189,量,Menge,quantity
+190,厘,Rin,rin
+191,埋,begraben,bury
+192,同,identisch,same
+193,洞,Grotte,den
+194,胴,Rumpf,trunk
+195,向,gerichtet an,yonder
+196,尚,Wertschätzung,esteem
+197,字,Schriftzeichen,character
+198,守,Wache,guard
+199,完,vollendet,perfect
+200,宣,verkünden,proclaim
+201,宵,bis in die Puppen,wee hours
+202,安,ruhig,relax
+203,宴,Festmahl,banket
+204,寄,sich nähern,draw near
+205,富,Reichtum,wealth
+206,貯,Ersparnisse,savings
+207,木,Baum,tree
+208,林,Hain,grove
+209,森,Wald,forest
+210,桂,Katsura,Japanese Judas-tree
+211,柏,Eiche,oak
+212,枠,Rahmen,frame
+213,梢,Wipfel,treetops
+214,棚,Regal,shelf
+215,杏,Aprikose,apricot
+216,桐,Paulownie,paulownia
+217,植,pflanzen,plant
+218,椅,Stuhl,chair
+219,枯,verdorren,wither
+220,朴,schlicht,crude
+221,村,Dorf,town
+222,相,einander,inter-
+223,机,Schreibtisch,desk
+224,本,Buch,book
+225,札,Etikett,tag
+226,暦,Kalender,calendar
+227,案,Vorhaben,plan
+228,燥,dörren,parch
+229,未,noch nicht,not yet
+230,末,schließlich,extremity
+231,昧,unklar,obscure
+232,沫,Gischt,splash
+233,味,Geschmack,flavor
+234,妹,jüngere Schwester,younger sister
+235,朱,zinnoberrot,vermilion
+236,株,Aktien,stocks
+237,若,jung,young
+238,草,Gras,grass
+239,苦,leiden,suffering
+240,苛,Schikane,bullying
+241,寛,nachsichtig,tolerant
+242,薄,verdünnen,dilute
+243,葉,Laub,leaf
+244,模,Imitation,imitation
+245,漠,vage,vague
+246,墓,Grab,grave
+247,暮,Lebensunterhalt,livelihood
+248,膜,Membrane,membrane
+249,苗,Setzling,seedling
+250,兆,Vorzeichen,portent
+251,桃,Pfirsich,peach tree
+252,眺,anstarren,stare
+253,犬,Hund,dog
+254,状,Umstände,status quo
+255,黙,schweigen,silcence
+256,然,-artig,sort of thing
+257,荻,Schilf,reed
+258,狩,jagen,hunt
+259,猫,Katze,cat
+260,牛,Kuh,cow
+261,特,speziell,special
+262,告,Ansage,revelation
+263,先,voran,before
+264,洗,waschen,wash
+265,介,dazwischen,jammed in
+266,界,Welt,world
+267,茶,Tee,tea
+268,脊,Wirbelsäule,spinal column
+269,合,passen,fit
+270,塔,Pagode,pagoda
+271,王,König,king
+272,玉,Edelstein,jewel
+273,宝,Schatz,treasure
+274,珠,Perle,pearl
+275,現,gegenwärtig,present
+276,玩,Spielzeug,toy
+277,狂,verrückt,lunatic
+278,旺,munter,effulgent
+279,皇,Kaiser,emperor
+280,呈,darbieten,display
+281,全,gesamt,whole
+282,栓,Stöpsel,plug
+283,理,Logik,logic
+284,主,Herr,lord
+285,注,gießen,pour
+286,柱,Pfeiler,pillar
+287,金,Gold,gold
+288,銑,Roheisen,pig iron
+289,鉢,Schüssel,bowl
+290,銅,Kupfer,copper
+291,釣,angeln,angling
+292,針,Nadel,needle
+293,銘,Inschrift,inscription
+294,鎮,beruhigen,tranquilize
+295,道,Weg,road-way
+296,導,leiten,guidance
+297,辻,Kreuzung,crossing
+298,迅,rasch,swift
+299,造,erschaffen,create
+300,迫,bedrängen,urge
+301,逃,fliehen,escape
+302,辺,Umgebung,environs
+303,巡,Patrouille,patrol
+304,車,Wagen,car
+305,連,mitnehmen,take along
+306,軌,Spurrille,rut
+307,輸,Transport,transport
+308,喩,Metapher,metaphor
+309,前,vor,in front
+310,煎,rösten,roast
+311,各,jeder,each
+312,格,Status,status
+313,賂,Schmiergeld,graft
+314,略,Abkürzung,abbreviation
+315,客,Gast,guest
+316,額,Stirn,forehead
+317,夏,Sommer,summer
+318,処,an seinem Platz,dispose
+319,条,Klausel,twig
+320,落,fallen,fall
+321,冗,überflüssig,superfluous
+322,冥,Unterwelt,Hades
+323,軍,Armee,army
+324,輝,leuchten,radiance
+325,運,tragen,carry
+326,冠,Krone,crown
+327,夢,Traum,dream
+328,坑,Grube,pit
+329,高,hoch,tall
+330,享,genießen,receive
+331,塾,Nachhilfeschule,cram school
+332,熟,reifen,mellow
+333,亭,Pavillon,pavilion
+334,京,Hauptstadt,capital
+335,涼,erfrischen,refreshing
+336,景,Landschaft,scenery
+337,鯨,Wal,whale
+338,舎,Hütte,cottage
+339,周,Umfang,circumference
+340,週,Woche,week
+341,士,Samurai,gentleman
+342,吉,Glück,good luck
+343,壮,beste Mannesjahre,robust
+344,荘,Villa,villa
+345,売,verkaufen,sell
+346,学,studieren,study
+347,覚,sich merken,memorize
+348,栄,brillieren,flourish
+349,書,schreiben,write
+350,津,Anlegeplatz,haven
+351,牧,züchten,breed
+352,攻,angreifen,aggression
+353,敗,Niederlage,failure
+354,枚,Blatt,a sheet of
+355,故,Anlass,happenstance
+356,敬,Ehrfurcht,awe
+357,言,sagen,say
+358,警,verwarnen,admonish
+359,計,Plan,plot
+360,詮,erörtern,elucidate
+361,獄,Gefängnis,prison
+362,訂,korrigieren,revise
+363,訃,Todesanzeige,obituary
+364,討,züchtigen,chastise
+365,訓,Belehrung,instruction
+366,詔,kaiserlicher Erlaß,imperial edict
+367,詰,stopfen,packed
+368,話,sprechen,tale
+369,詠,rezitieren,recitation
+370,詩,Gedicht,poem
+371,語,Sprache,word
+372,読,lesen,read
+373,調,stimmen,tune
+374,談,diskutieren,discuss
+375,諾,Zustimmung,consent
+376,諭,ermahnen,rebuke
+377,式,Stil,style
+378,試,probieren,test
+379,弐,II (zwei),II (two)
+380,域,Region,range
+381,賊,plündern,burglar
+382,栽,Plantage,plantation
+383,載,beladen,load
+384,茂,bewachsen,overgrown
+385,戚,Verwandte,relatives
+386,成,werden zu,turn into
+387,城,Burg,castle
+388,誠,aufrichtig,sincerity
+389,威,einschüchtern,intimidate
+390,滅,Vernichtung,destroy
+391,減,verringern,dwindle
+392,蔑,herabsetzen,revile
+393,桟,Gerüst,scaffold
+394,銭,Münze,coin
+395,浅,seicht,shallow
+396,止,stoppen,stop
+397,歩,spazieren,walk
+398,渉,Furt,ford
+399,頻,häufig,repeatedly
+400,肯,bejahen,agreement
+401,企,unternehmen,undertake
+402,歴,Zeitablauf,curriculum
+403,武,Krieger,warrior
+404,賦,auferlegen,levy
+405,正,richtig,correct
+406,証,Beweis,evidence
+407,政,Politik,politics
+408,定,bestimmt,determine
+409,錠,Schloss,lock
+410,走,laufen,run
+411,超,übersteigen,transcend
+412,赴,sich begeben nach,proceed
+413,越,überschreiten,surpass
+414,是,genau so,just so
+415,題,Thema,topic
+416,堤,Deich,dike
+417,建,errichten,build
+418,鍵,Schlüssel,key
+419,延,verlängern,prolong
+420,誕,Geburt,nativity
+421,礎,Grundstein,cornerstone
+422,婿,Bräutigam,bridegroom
+423,衣,Gewand,garment
+424,裁,schneidern,tailor
+425,装,Aufmachung,attire
+426,裏,Rückseite,back
+427,壊,zerstören,demolition
+428,哀,Erbarmen,pathetic
+429,遠,fern,distant
+430,猿,Affe,monkey
+431,初,erstmals,first time
+432,巾,Tuch,towel
+433,布,Stoff,linen
+434,帆,Segel,sail
+435,幅,Rollbild,hanging scroll
+436,帽,Mütze,cap
+437,幕,Vorhang,curtain
+438,幌,Plane,canopy
+439,錦,Brokat,brocade
+440,市,Markt,market
+441,柿,Persimone,persimmon
+442,姉,ältere Schwester,elder sister
+443,肺,Lunge,lungs
+444,帯,Gurt,sash
+445,滞,stocken,stagnate
+446,刺,Stachel,thorn
+447,制,System,system
+448,製,herstellen,made in...
+449,転,rotieren,revolve
+450,芸,Kunst,technique
+451,雨,Regen,rain
+452,雲,Wolke,cloud
+453,曇,bewölkt,cloudy weather
+454,雷,Donner,thunder
+455,霜,Frost,frost
+456,冬,Winter,winter
+457,天,Himmel,heavens
+458,妖,bestrickend,bewitched
+459,沃,fruchtbar,irrigate
+460,橋,Brücke,bridge
+461,嬌,attraktiv,attractive
+462,立,stehen,stand up
+463,泣,weinen,cry
+464,章,Abzeichen,badge
+465,競,konkurrieren,vie
+466,帝,Imperator,sovereign
+467,諦,aufgeben,resignation
+468,童,Knirps,juvenile
+469,瞳,Pupille,pupil
+470,鐘,Glocke,bell
+471,商,Handel treiben,make a deal
+472,嫡,rechtmäßige Ehefrau,legitimate wife
+473,適,geeignet,suitable
+474,滴,tropfen,drip
+475,敵,Feind,enemy
+476,匕,Löffel,spoon
+477,叱,schimpfen,scold
+478,匂,Aroma,aroma
+479,頃,um die Zeit,about that time
+480,北,Norden,north
+481,背,Statur,stature
+482,比,vergleichen,compare
+483,昆,Nachkomme,descendants
+484,皆,alle,all
+485,楷,Blockschrift,block letters
+486,諧,Einklang,orderliness
+487,混,mischen,mix
+488,渇,Durst,thirst
+489,謁,Audienz,audience
+490,褐,braun,brown
+491,喝,anbrüllen,hoarse
+492,葛,Kudsu,kudzu
+493,旨,lecker,delicious
+494,脂,Speck,fat
+495,詣,einen Schrein besuchen,visit a shrine
+496,壱,I. (eins),I (one)
+497,毎,jedes Mal,every
+498,敏,gewitzt,cleverness
+499,梅,Pflaume,plum
+500,海,Meer,sea
+501,乞,betteln,beg
+502,乾,Trockenheit,drought
+503,腹,Bauch,abdomen
+504,複,mehrfach,duplicate
+505,欠,Mangel,lack
+506,吹,blasen,blow
+507,炊,kochen,cook
+508,歌,Lied,song
+509,軟,weich,soft
+510,次,Nächster,next
+511,茨,Dornbusch,briar
+512,資,Kapital,assets
+513,姿,Figur,figure
+514,諮,zu Rate ziehen,consult with
+515,賠,Entschädigung,compensation
+516,培,kultivieren,cultivate
+517,剖,sezieren,divide
+518,音,Klang,sound
+519,暗,Dunkelheit,darkness
+520,韻,Reim,rhyme
+521,識,Urteilsfähigkeit,discriminating
+522,鏡,Spiegel,mirror
+523,境,Grenze,boundary
+524,亡,verstorben,deceased
+525,盲,blind,blind
+526,妄,Wahn,delusion
+527,荒,verwüsten,laid waste
+528,望,Verlangen,ambition
+529,方,Richtung,direction
+530,妨,hindern,disturb
+531,坊,Junge,boy
+532,芳,wohlriechend,perfumed
+533,肪,verfetten,obese
+534,訪,besuchen,call on
+535,放,freilassen,set free
+536,激,heftig,violent
+537,脱,ausziehen,undress
+538,説,Auslegung,explanation
+539,鋭,spitz,pointed
+540,曽,zuvor,formerly
+541,増,zunehmen,increase
+542,贈,Geschenk,presents
+543,東,Osten,east
+544,棟,Firstbalken,ridgepole
+545,凍,gefroren,frozen
+546,妊,Empfängnis,pregnancy
+547,廷,Gerichtshof,courts
+548,染,färben,dye
+549,燃,brennen,burn
+550,賓,Ehrengast,V.I.P.
+551,歳,Jahresende,year-end
+552,県,Präfektur,prefecture
+553,栃,Rosskastanie,horse chestnut
+554,地,Grund,ground
+555,池,Teich,pond
+556,虫,Insekt,insect
+557,蛍,Glühwürmchen,lightning bug
+558,蛇,Schlange,snake
+559,虹,Regenbogen,rainbow
+560,蝶,Schmetterling,butterfly
+561,独,allein,single
+562,蚕,Seidenraupe,silkworm
+563,風,Wind,wind
+564,己,sich,self
+565,起,aufwachen,rouse
+566,妃,Königin,queen
+567,改,reformieren,reformation
+568,記,notieren,scribe
+569,包,einwickeln,wrap up
+570,胞,Plazenta,placenta
+571,砲,Kanone,cannon
+572,泡,Schaum,bubble
+573,亀,Schildkröte,tortoise
+574,電,Elektrizität,electricity
+575,竜,Drache,dragon
+576,滝,Wasserfall,waterfall
+577,豚,Schwein,pork
+578,逐,vertreiben,pursue
+579,遂,durchführen,consummation
+580,家,Haus,house
+581,嫁,einheiraten,marry into
+582,豪,grandios,overpowering
+583,腸,Gedärme,intestines
+584,場,Ort,location
+585,湯,Heißwasser,hot water
+586,羊,Schaf,sheep
+587,美,Schönheit,beauty
+588,洋,Ozean,ocean
+589,詳,detailliert,detailed
+590,鮮,frisch,fresh
+591,達,erlangen,accomplish
+592,羨,neidisch,envious
+593,差,Unterschied,distinction
+594,着,anziehen,don
+595,唯,bloß,solely
+596,堆,aufgetürmt,piled high
+597,椎,Scheinkastanie,sweet oak
+598,誰,wer,who?
+599,焦,versengen,char
+600,礁,Riff,reef
+601,集,sammeln,gather
+602,准,quasi-,quasi-
+603,進,Fortschritt,advance
+604,雑,diverse,miscellaneous
+605,雌,weiblich,female
+606,準,semi-,semi-
+607,奮,angeregt,stirred up
+608,奪,rauben,rob
+609,確,gewiss,assurance
+610,午,Mittag,noon
+611,許,erlauben,permit
+612,歓,Freude,delight
+613,権,Autorität,authority
+614,観,Anschauung,outlook
+615,羽,Feder,feathers
+616,習,lernen,learn
+617,翌,folgender,the following
+618,曜,Wochentag,weekday
+619,濯,spülen,laundry
+620,曰,zu sagen pflegen,sayeth
+621,困,in Verlegenheit,quandary
+622,固,hart,harden
+623,錮,verschweißen,weld
+624,国,Land,country
+625,団,Gruppe,group
+626,因,Ursache,cause
+627,姻,Ehe,matrimony
+628,咽,Gurgel,windpipe
+629,園,Park,park
+630,回,x-mal,-times
+631,壇,Podium,podium
+632,店,Laden,store
+633,庫,Lager,warehouse
+634,庭,Garten,courtyard
+635,庁,Ministerium,government office
+636,床,Bett,bed
+637,麻,Hanf,hemp
+638,磨,polieren,grind
+639,心,Herz,heart
+640,忘,vergessen,forget
+641,恣,selbstsüchtig,selfish
+642,忍,erdulden,endure
+643,認,anerkennen,acknowledge
+644,忌,Trauer,mourning
+645,志,Absicht,intention
+646,誌,Zeitschrift,document
+647,芯,Docht,wick
+648,忠,Treue,loyalty
+649,串,Fleischspieß,shish kebab
+650,患,befallen,afflicted
+651,思,denken,think
+652,恩,Gunst,grace
+653,応,erwidern,apply
+654,意,Wille,idea
+655,臆,zagen,cowardice
+656,想,Idee,concept
+657,息,Atem,breath
+658,憩,Rast,recess
+659,恵,Gnade,favor
+660,恐,Furcht,fear
+661,惑,unsicher,beguile
+662,感,Gefühl,emotion
+663,憂,Trübsinn,melancholy
+664,寡,verwitwet,widow
+665,忙,beschäftigt,busy
+666,悦,Entzücken,ecstasy
+667,恒,beständig,constancy
+668,悼,beklagen,lament
+669,悟,Erleuchtung,enlightenment
+670,怖,schrecklich,dreadful
+671,慌,überstürzt,disconcerted
+672,悔,bereuen,repent
+673,憎,hassen,hate
+674,慣,Gewohnheit,accustomed
+675,愉,Vergnügen,pleasure
+676,惰,faul,lazy
+677,慎,Bescheidenheit,humility
+678,憾,Bedauern,remorse
+679,憶,Gedächtnis,recollection
+680,惧,bange,disquieting
+681,憧,Drang,yearn
+682,憬,schmachten,hanker
+683,慕,Sehnsucht,pining
+684,添,beifügen,annexed
+685,必,zwangsläufig,invariably
+686,泌,absondern,ooze
+687,手,Hand,hand
+688,看,beobachten,watch over
+689,摩,reiben,chafe
+690,我,Ego,ego
+691,義,Gerechtigkeit,righteousness
+692,議,Besprechung,deliberation
+693,犠,Opfer,sacrifice
+694,抹,streichen,rub
+695,拭,wegwischen,wipe
+696,拉,zerdrücken,yank
+697,抱,hegen,embrace
+698,搭,einsteigen,board
+699,抄,Auszug,extract
+700,抗,sich widersetzen,confront
+701,批,Kritik,criticism
+702,招,herbeiwinken,beckon
+703,拓,urbar machen,clear the land
+704,拍,klatschen,clap
+705,打,schlagen,strike
+706,拘,verhaften,arrest
+707,捨,wegwerfen,discard
+708,拐,entführen,kidnap
+709,摘,Prise,pinch
+710,挑,herausfordern,challenge
+711,指,Finger,finger
+712,持,halten,hold
+713,拶,bevorstehen,imminent
+714,括,zusammenbinden,fasten
+715,揮,schwingen,brandish
+716,推,vermuten,conjecture
+717,揚,hissen,hoist
+718,提,vorlegen,propose
+719,損,Schaden,damage
+720,拾,auflesen,pick up
+721,担,schultern,shouldering
+722,拠,Basis,foothold
+723,描,zeichnen,sketch
+724,操,steuern,maneuver
+725,接,berühren,touch
+726,掲,Aushang,put up a notice
+727,掛,hängen,hang
+728,捗,vorankommen,make headway
+729,研,schleifen,polish
+730,戒,Gebot,commandment
+731,弄,herumspielen mit,tinker with
+732,械,Apparat,contraption
+733,鼻,Nase,nose
+734,刑,Strafe,punish
+735,型,Gussform,mould
+736,才,Genie,genius
+737,財,Vermögen,property
+738,材,Baumaterial,lumber
+739,存,existieren,suppose
+740,在,sein,exist
+741,乃,des,from
+742,携,tragbar,portable
+743,及,sich erstrecken,reach out
+744,吸,saugen,suck
+745,扱,behandeln,handle
+746,丈,Länge,length
+747,史,Historie,history
+748,吏,Beamter,officer
+749,更,spät werden,grow late
+750,硬,starr,stiff
+751,梗,zupropfen,spiny
+752,又,einmal mehr,or again
+753,双,Paar,pair
+754,桑,Maulbeerbaum,mulberry
+755,隻,Seefahrzeuge,vessels
+756,護,schützen,safeguard
+757,獲,erbeuten,seize
+758,奴,Kerl,guy
+759,怒,wütend,angry
+760,友,Freund,friend
+761,抜,herausziehen,slip out
+762,投,werfen,throw
+763,没,untergehen,drown
+764,股,Schenkel,thigh
+765,設,einrichten,establishment
+766,撃,Abschuss,beat
+767,殻,Hülse,husk
+768,支,Zweig,branch
+769,技,Technik,skill
+770,枝,Ast,bough
+771,肢,Gliedmaßen,limb
+772,茎,Stängel,stalk
+773,怪,verdächtig,suspicion
+774,軽,leicht,lightly
+775,叔,Onkel,uncle
+776,督,Aufseher,coach
+777,寂,Einsamkeit,loneliness
+778,淑,anmutig,graceful
+779,反,anti-,anti-
+780,坂,Abhang,slope
+781,板,Brett,plank
+782,返,zurück,return
+783,販,veräußern,marketing
+784,爪,Kralle,claw
+785,妥,Kompromiss,gentle
+786,乳,Milch,milk
+787,浮,dahintreiben,floating
+788,淫,lüstern,lewd
+789,将,Kommandeur,leader
+790,奨,fördern,exhort
+791,采,sich schnappen,grab
+792,採,pflücken,pick
+793,菜,Gemüse,vegetable
+794,受,annehmen,accept
+795,授,Verleihung,impart
+796,愛,Liebe,love
+797,曖,schummrig,unclear
+798,払,bezahlen,pay
+799,広,breit,wide
+800,勾,gekrümmt,hooked
+801,拡,erweitern,broaden
+802,鉱,Mineral,mineral
+803,弁,Klappe,valve
+804,雄,männlich,male
+805,台,Sockel,pedestal
+806,怠,vernachlässigen,neglect
+807,治,regieren,reign
+808,冶,Metallurgie,metallurgy
+809,始,beginnen,commence
+810,胎,Mutterleib,womb
+811,窓,Fenster,window
+812,去,fort,gone
+813,法,Gesetz,method
+814,会,Zusammenkunft,meeting
+815,至,erreichen,climax
+816,室,Zimmer,room
+817,到,ankommen,arrival
+818,致,herbeiführen,doth
+819,互,gegenseitig,mutually
+820,棄,verwerfen,abandon
+821,育,aufziehen,bring up
+822,撤,zurückziehen,remove
+823,充,füllen,allot
+824,銃,Gewehr,gun
+825,硫,Schwefel,sulfur
+826,流,Strömung,current
+827,允,gestatten,license
+828,唆,verführen,tempt
+829,出,hinaus-,exit
+830,山,Berg,mountain
+831,拙,ungeschickt,bungling
+832,岩,Felsen,boulder
+833,炭,Holzkohle,charcoal
+834,岐,Abzweigung,branch off
+835,峠,Gebirgspass,mountain pass
+836,崩,zerfallen,crumble
+837,密,heimlich,secrecy
+838,蜜,Honig,honey
+839,嵐,Sturm,storm
+840,崎,Vorgebirge,promontory
+841,崖,Steilhang,bluffs
+842,入,hinein-,enter
+843,込,gedrängt,crowded
+844,分,Teil,part
+845,貧,arm<br />,poverty
+846,頒,verteilen,partition
+847,公,öffentlich,public
+848,松,Kiefer,pine tree
+849,翁,Greis,venerable old man
+850,訟,verklagen,sue
+851,谷,Tal,valley
+852,浴,baden,bathe
+853,容,Inhalt,contain
+854,溶,schmelzen,melt
+855,欲,begehren,longing
+856,裕,Überfluss,abundant
+857,鉛,Blei,lead (metal)
+858,沿,entlang verlaufen,run alongside
+859,賞,Auszeichnung,prize
+860,党,Partei,partly
+861,堂,Halle,hall
+862,常,üblich,usual
+863,裳,Rock,skirt
+864,掌,Handfläche,manipulate
+865,皮,Pelz,pelt
+866,波,Welle,waves
+867,婆,Greisin,old woman
+868,披,eröffnen,expose
+869,破,zerreißen,rend
+870,被,sich etwas zuziehen,incur
+871,残,Rest,remainder
+872,殉,Martyrium,martyrdom
+873,殊,insbesondere,particularly
+874,殖,vermehren,augment
+875,列,Zug,file
+876,裂,spalten,split
+877,烈,entbrannt,ardent
+878,死,Tod,death
+879,葬,Beerdigung,interment
+880,瞬,blinzeln,wink
+881,耳,Ohr,ear
+882,取,nehmen,take
+883,趣,Sinngehalt,gist
+884,最,äußerst,utmost
+885,撮,knipsen,snapshot
+886,恥,Scham,shame
+887,職,Posten,post
+888,聖,heilig,holy
+889,敢,kühn,daring
+890,聴,horchen,listen
+891,懐,Nostalgie,pocket
+892,慢,spöttisch,ridicule
+893,漫,unbekümmert,loose
+894,買,kaufen,buy
+895,置,platzieren,placement
+896,罰,ahnden,penalty
+897,寧,eher,rather
+898,濁,trübe,voiced
+899,環,Ring,ring
+900,還,zurückversetzen,send back
+901,夫,Ehemann,husband
+902,扶,Unterhalt,aid
+903,渓,Gebirgsbach,mountain stream
+904,規,Norm,standard
+905,替,umtauschen,exchange
+906,賛,preisen,approve
+907,潜,untertauchen,submerge
+908,失,verlieren,lose
+909,鉄,Eisen,iron
+910,迭,abwechseln,alternate
+911,臣,Gefolgsmann,retainer
+912,姫,Prinzessin,princess
+913,蔵,Depot,storehouse
+914,臓,Eingeweide,entrails
+915,賢,intelligent,intelligent
+916,腎,Niere,kidney
+917,堅,solide,strict
+918,臨,entgegensehen,look to
+919,覧,besichtigen,perusal
+920,巨,riesig,gigantic
+921,拒,abweisen,repel
+922,力,Kraft,power
+923,男,Mann,man
+924,労,Mühe,labor
+925,募,anwerben,recruit
+926,劣,minderwertig,inferiority
+927,功,verdienstvoll,achievement
+928,勧,aufmuntern,persuade
+929,努,sich anstrengen,toil
+930,勃,sich aufrichten,uprising
+931,励,anspornen,encourage
+932,加,hinzufügen,add
+933,賀,Gratulation,congratulations
+934,架,installieren,erect
+935,脇,Flanke,armpit
+936,脅,bedrohen,threaten
+937,協,ko-,co-
+938,行,gehen,going
+939,律,Rhythmus,rhythm
+940,復,wiederherstellen,restore
+941,得,Nutzen,gain
+942,従,folgen,accompany
+943,徒,vergeblich,junior
+944,待,warten,wait
+945,往,Fahrt,journey
+946,征,unterwerfen,subjugate
+947,径,Durchmesser,diameter
+948,彼,Er,he
+949,役,Dienst,duty
+950,徳,Tugend,benevolence
+951,徹,durchdringen,penetrate
+952,徴,Anzeichen,indication
+953,懲,Sanktion,penal
+954,微,winzig,delicate
+955,街,Boulevard,boulevard
+956,桁,Tragbalken,girder
+957,衡,Gleichgewicht,equilibrium
+958,稿,Manuskript,draft
+959,稼,Einkünfte,earnings
+960,程,Ausmaß,extent
+961,税,Steuern,tax
+962,稚,kindlich,immature
+963,和,Harmonie,harmony
+964,移,verlagern,shift
+965,秒,Sekunde,second
+966,秋,Herbst,autumn
+967,愁,Kummer,distress
+968,私,privat,private
+969,秩,Ordnung,regularity
+970,秘,Geheimnis,secret
+971,称,Bezeichnung,appellation
+972,利,Vorteil,profit
+973,梨,Birnbaum,pear tree
+974,穫,Ernte,harvest
+975,穂,Ähre,ear of a plant
+976,稲,Reispflanze,rice plant
+977,香,Weihrauch,incense
+978,季,Jahreszeit,seasons
+979,委,Komitee,committee
+980,秀,übertreffen,excel
+981,透,durchsichtig,transparent
+982,誘,verleiten,entice
+983,稽,Übung,training
+984,穀,Getreide,cereals
+985,菌,Bakterien,germ
+986,萎,schlaff,numb
+987,米,Reis,rice
+988,粉,Mehl,flour
+989,粘,klebrig,sticky
+990,粒,Korn,grains
+991,粧,schminken,cosmetics
+992,迷,verirren,astray
+993,粋,chic,chic
+994,謎,Rätsel,riddle
+995,糧,Proviant,provisions
+996,菊,Chrysantheme,chrysanthemum
+997,奥,Tiefe,core
+998,数,Zahl,number
+999,楼,Wachturm,watchtower
+1000,類,Sorte,sort
+1001,漆,Lack,lacquer
+1002,膝,Knie,knee
+1003,様,Gnädigste,Esq.
+1004,求,fordern,request
+1005,球,Ball,ball
+1006,救,retten,salvation
+1007,竹,Bambus,bamboo
+1008,笑,lachen,laugh
+1009,笠,Bambushut,bamboo hat
+1010,笹,Bambusgras,bamboo grass
+1011,箋,Briefpapier,stationery
+1012,筋,Muskel,muscle
+1013,箱,Schachtel,box
+1014,筆,Schreibpinsel,writing brush
+1015,筒,Röhre,cylinder
+1016,等,u.s.w.,etc.
+1017,算,rechnen,calculate
+1018,答,Antwort,solution
+1019,策,Strategie,scheme
+1020,簿,Verzeichnis,register
+1021,築,bauen,fabricate
+1022,籠,Käfig,basket
+1023,人,Mensch,person
+1024,佐,Assistent,assistant
+1025,侶,Partner,partner
+1026,但,jedoch,however
+1027,住,wohnen,dwell
+1028,位,Rang,rank
+1029,仲,Verhältnis,go-between
+1030,体,Körper,body
+1031,悠,gelassen,remote
+1032,件,Angelegenheit,affair
+1033,仕,bedienen,attend
+1034,他,anderes,other
+1035,伏,sich niederwerfen,prostrated
+1036,伝,übermitteln,transmit
+1037,仏,Buddha,Buddha
+1038,休,ausruhen,rest
+1039,仮,vorläufig,provisional
+1040,伎,Bühnenkünstler,performing artist
+1041,伯,Graf,chief
+1042,俗,volkstümlich,vulgar
+1043,信,Glaube,faith
+1044,佳,exzellent,excellent
+1045,依,abhängig,reliant
+1046,例,Beispiel,example
+1047,個,Individuum,individual
+1048,健,gesund,healthy
+1049,側,Seite,side
+1050,侍,aufwarten,waiter
+1051,停,anhalten,halt
+1052,値,Preis,price
+1053,倣,nacheifern,emulgate
+1054,傲,Arroganz,arrogance
+1055,倒,umstürzen,overthrow
+1056,偵,auskundschaften,spy
+1057,僧,buddhistischer Priester,Buddhist priest
+1058,億,hundert Millionen,hundred million
+1059,儀,Zeremonie,ceremony
+1060,償,Wiedergutmachung,reparation
+1061,仙,Einsiedler,hermit
+1062,催,veranstalten,sponsor
+1063,仁,Menschlichkeit,humanity
+1064,侮,verachten,scorn
+1065,使,benutzen,use
+1066,便,Bequemlichkeit,convenience
+1067,倍,doppelt,double
+1068,優,liebenswürdig,tenderness
+1069,伐,fällen,fell
+1070,宿,Herberge,inn
+1071,傷,Wunde,wound
+1072,保,bewahren,protect
+1073,褒,loben,praise
+1074,傑,meisterhaft,greatness
+1075,付,anhaften,adhere
+1076,符,Zeichen,token
+1077,府,Stadtpräfektur,municipality
+1078,任,Verantwortung,responsibility
+1079,賃,Fahrgeld,fare
+1080,代,Ersatz,substitute
+1081,袋,Sack,sack
+1082,貸,Verleih,lend
+1083,化,verwandeln,change
+1084,花,Blume,flower
+1085,貨,Fracht,freight
+1086,傾,sich neigen,lean
+1087,何,was,what
+1088,荷,Gepäck,baggage
+1089,俊,hochbegabt,sagacious
+1090,傍,Außenstehender,bystander
+1091,俺,icke,myself
+1092,久,lange Zeit,long time
+1093,畝,Furche,furrow
+1094,囚,Häftling,captured
+1095,内,innerhalb,inside
+1096,丙,drittklassig,third class
+1097,柄,Gestaltung,design
+1098,肉,Fleisch,meat
+1099,腐,verfaulen,rot
+1100,座,sitzen,sit
+1101,挫,verstauchen,sprain
+1102,卒,Abschluss,graduate
+1103,傘,Schirm,umbrella
+1104,匁,monme,monme
+1105,以,mittels,by means of
+1106,似,ähnlich,similar
+1107,併,zusammenfügen,join
+1108,瓦,Ziegel,tile
+1109,瓶,Flasche,flower pot
+1110,宮,Shinto-Schrein,Shinto shrine
+1111,営,Betrieb,occupation
+1112,善,das Gute,virtuous
+1113,膳,Esstischchen,dining tray
+1114,年,Jahr,year
+1115,夜,Nacht,night
+1116,液,Flüssigkeit,fluid
+1117,塚,Haufen,hillock
+1118,幣,Geldschein,cash
+1119,蔽,bedecken,cover over
+1120,弊,Unsitte,abuse
+1121,喚,kreischen,yell
+1122,換,austauschen,interchange
+1123,融,auflösen,dissolve
+1124,施,Almosen,alms
+1125,旋,Drehung,rotation
+1126,遊,spielen,play
+1127,旅,Reise,trip
+1128,勿,ohne,not
+1129,物,Ding,thing
+1130,易,Leichtigkeit,easy
+1131,賜,gewähren,grant
+1132,尿,Urin,urine
+1133,尼,Nonne,nun
+1134,尻,Gesäß,buttocks
+1135,泥,Schlamm,mud
+1136,塀,Zaun,fence
+1137,履,Fußbekleidung,footgear
+1138,屋,Dach,roof
+1139,握,greifen,grip
+1140,屈,sich beugen,yield
+1141,掘,graben,dig
+1142,堀,Graben,ditch
+1143,居,sich aufhalten,reside
+1144,据,aufstellen,set
+1145,裾,Saum,hem
+1146,層,Schicht,stratum
+1147,局,Behörde,bureau
+1148,遅,verspäten,slow
+1149,漏,Leck,leak
+1150,刷,drucken,printing
+1151,尺,Shaku,shaku
+1152,尽,aufbrauchen,exhaust
+1153,沢,Sumpf,swamp
+1154,訳,übersetzen,translate
+1155,択,auswählen,choose
+1156,昼,tagsüber,daytime
+1157,戸,Tür,door
+1158,肩,Schulter,shoulder
+1159,房,Büschel,tassel
+1160,扇,Fächer,fan
+1161,炉,Herd,hearth
+1162,戻,zurückbringen,re-
+1163,涙,Träne,tears
+1164,雇,Anstellung,employ
+1165,顧,zurückblicken,look back
+1166,啓,offenbaren,disclose
+1167,示,zeigen,show
+1168,礼,Dank,salutation
+1169,祥,verheißungsvoll,auspicious
+1170,祝,feiern,celebrate
+1171,福,Segen,blessing
+1172,祉,Wohlfahrt,welfare
+1173,社,Gesellschaft,company
+1174,視,betrachten,inspection
+1175,奈,Nara,Nara
+1176,尉,Offizier,military officer
+1177,慰,trösten,consolation
+1178,款,Wohlwollen,goodwill
+1179,禁,Verbot,prohibition
+1180,襟,Kragen,collar
+1181,宗,Religion,religion
+1182,崇,verehren,adore
+1183,祭,Ritual,ritual
+1184,察,raten,guess
+1185,擦,schrammen,grate
+1186,由,beruhen auf,wherefore
+1187,抽,Ziehung,pluck
+1188,油,Öl,oil
+1189,袖,Ärmel,sleeve
+1190,宙,schwebend,mid-air
+1191,届,benachrichtigen,deliver
+1192,笛,Flöte,flute
+1193,軸,Achse,axis
+1194,甲,Panzerung,armor
+1195,押,drücken,push
+1196,岬,Landzunge,headland
+1197,挿,einfügen,insert
+1198,申,sich äußern,speaketh
+1199,伸,sich recken,expand
+1200,神,Gottheit,gods
+1201,捜,suchen,search
+1202,果,Obst,fruit
+1203,菓,Naschwerk,confectionary
+1204,課,Lektion,chapter
+1205,裸,nackt,naked
+1206,斤,Axt,ax
+1207,析,auseinander nehmen,chop
+1208,所,Stelle,place
+1209,祈,beten,pray
+1210,近,nah,near
+1211,折,falten,fold
+1212,哲,Philosophie,philosophy
+1213,逝,ableben,departed
+1214,誓,schwören,vow
+1215,斬,abschlagen,chop off
+1216,暫,vorübergehend,temporarily
+1217,漸,allmählich,steadily
+1218,断,abschneiden,severance
+1219,質,Substanz,substance
+1220,斥,ablehnen,reject
+1221,訴,Anklage,accusation
+1222,昨,gestern,yesterday
+1223,詐,lügen,lie
+1224,作,machen,make
+1225,雪,Schnee,snow
+1226,録,aufzeichnen,record
+1227,剥,schälen,peel off
+1228,尋,sich erkundigen,inquire
+1229,急,eilig,hurry
+1230,穏,Stille,calm
+1231,侵,eindringen,encroach
+1232,浸,eintauchen,immersed
+1233,寝,sich hinlegen,lie down
+1234,婦,Dame,lady
+1235,掃,fegen,sweep
+1236,当,treffen,hit
+1237,彙,Glossar,glossary
+1238,争,streiten,contend
+1239,浄,sauber,clean
+1240,事,Sache,matter
+1241,唐,Tang-Dynastie,T'ang
+1242,糖,Zucker,sugar
+1243,康,Seelenfrieden,sane
+1244,逮,festnehmen,apprehend
+1245,伊,Italien,Italy
+1246,君,du,old boy
+1247,群,Herde,flock
+1248,耐,-fest,-proof
+1249,需,Nachfrage,demand
+1250,儒,Konfuzianismus,Confucian
+1251,端,Rand,edge
+1252,両,beide,both
+1253,満,voll,full
+1254,画,Pinselstrich,brush-stroke
+1255,歯,Zahn,tooth
+1256,曲,biegen,bend
+1257,曹,Kamerad,cadet
+1258,遭,stoßen auf,encounter
+1259,漕,rudern,rowing
+1260,槽,Bottich,vat
+1261,斗,Großer Wagen,Big Dipper
+1262,料,Gebühr,fee
+1263,科,Fakultät,department
+1264,図,Landkarte,map
+1265,用,gebrauchen,utilize
+1266,庸,mäßig,comforable
+1267,備,ausrüsten,equip
+1268,昔,Es war einmal...,once upon a time
+1269,錯,verworren,confused
+1270,借,entleihen,borrow
+1271,惜,schade,pity
+1272,措,beiseite legen,set aside
+1273,散,zerstreuen,scatter
+1274,廿,zwanzig,twenty
+1275,庶,gewöhnlich,commoner
+1276,遮,blockieren,intercept
+1277,席,Sitz,seat
+1278,度,Grad,degrees
+1279,渡,überqueren,transit
+1280,奔,herumlaufen,bustle
+1281,噴,speien,erupt
+1282,墳,Grabhügel,tomb
+1283,憤,empört,aroused
+1284,焼,backen,bake
+1285,暁,Tagesanbruch,daybreak
+1286,半,Hälfte,half
+1287,伴,begleiten,consort
+1288,畔,Feldrain,paddy ridge
+1289,判,urteilen,judgment
+1290,拳,Faust,fist
+1291,券,-karte,ticket
+1292,巻,Rolle,scroll
+1293,圏,Sphäre,sphere
+1294,勝,Sieg,victory
+1295,藤,Glyzinie,wisteria
+1296,謄,Abschrift,facsimilie
+1297,片,einseitig,one-sided
+1298,版,Druckplatte,printing block
+1299,之,von,of
+1300,乏,knapp,destitution
+1301,芝,Rasen,turf
+1302,不,negativ,negative
+1303,否,verneinen,negate
+1304,杯,Becher,cupfuls
+1305,矢,Wurfpfeil,dart
+1306,矯,begradigen,rectify
+1307,族,Sippe,tribe
+1308,知,wissen,know
+1309,智,Weisheit,wisdom
+1310,挨,aufstoßen,shove
+1311,矛,Hellebarde,halberd
+1312,柔,sanft,tender
+1313,務,Aufgabe,task
+1314,霧,Nebel,fog
+1315,班,Trupp,squad
+1316,帰,heimkehren,homecoming
+1317,弓,Bogen,bow
+1318,引,ziehen,pull
+1319,弔,Beileid,condolence
+1320,弘,verbreiten,vast
+1321,強,stark,strong
+1322,弥,immer mehr,more and more
+1323,弱,schwach,weak
+1324,溺,ertrinken,drowning
+1325,沸,sieden,seethe
+1326,費,Kosten,expense
+1327,第,Nr.,No.
+1328,弟,jüngerer Bruder,younger brother
+1329,巧,gewandt,adroit
+1330,号,Chiffre,nickname
+1331,朽,vermodern,decay
+1332,誇,prahlen,boast
+1333,顎,Kinn,chin
+1334,汚,schmutzig,dirty
+1335,与,erteilen,bestow
+1336,写,kopieren,copy
+1337,身,Leib,somebody
+1338,射,schießen,shoot
+1339,謝,sich entschuldigen,apologize
+1340,老,alter Mann,old man
+1341,考,erwägen,consider
+1342,孝,Kindespflicht,filial piety
+1343,教,lehren,teach
+1344,拷,foltern,torture
+1345,者,Person,someone
+1346,煮,brodeln,boil
+1347,著,auffallend,renowned
+1348,箸,Essstäbchen,chopsticks
+1349,署,unterschreiben,signature
+1350,暑,drückend,sultry
+1351,諸,allerlei,various
+1352,猪,Wildschwein,boar
+1353,渚,Strand,strand
+1354,賭,wetten,gamble
+1355,峡,Schlucht,gorge
+1356,狭,eng,cramped
+1357,挟,eingeklemmt,sandwiches
+1358,頬,Wange,cheek
+1359,追,verfolgen,chase
+1360,阜,Bühl,large hill
+1361,師,Meister,expert
+1362,帥,Oberbefehl,commander
+1363,官,Bürokrat,bureaucrat
+1364,棺,Sarg,coffin
+1365,管,Rohr,pipe
+1366,父,Vater,father
+1367,釜,Kessel,cauldron
+1368,交,Umgang,mingle
+1369,効,Wirkung,merit
+1370,較,gegenüberstellen,contrast
+1371,校,Schule,exam
+1372,足,Bein,leg
+1373,促,anregen,stimulate
+1374,捉,erwischen,nab
+1375,距,Distanz,long-distance
+1376,路,Pfad,path
+1377,露,Tautropfen,dew
+1378,跳,hüpfen,hop
+1379,躍,springen,leap
+1380,践,besteigen,tread
+1381,踏,betreten,step
+1382,踪,Fußspuren,trail
+1383,骨,Gebeine,skeleton
+1384,滑,glatt,slippery
+1385,髄,Mark,marrow
+1386,禍,Unheil,calamity
+1387,渦,Strudel,whirlpool
+1388,鍋,Topf,pot
+1389,過,übertreiben,overdo
+1390,阪,Böschung,Heights
+1391,阿,Afrika,Africa
+1392,際,Gelegenheit,occasion
+1393,障,hemmen,hinder
+1394,隙,Spalt,chink
+1395,随,folgsam,follow
+1396,陪,Beisitzer,auxiliary
+1397,陽,Sonnenschein,sunshine
+1398,陳,Aufstellung,line up
+1399,防,abwehren,ward off
+1400,附,Anhang,affixed
+1401,院,Inst.,Inst.
+1402,陣,Feldlager,camp
+1403,隊,Regiment,regiment
+1404,墜,abstürzen,crash
+1405,降,hinuntergehen,descend
+1406,階,Stockwerk,story
+1407,陛,Majestät,highness
+1408,隣,nebenan,neighboring
+1409,隔,isolieren,isolate
+1410,隠,verbergen,conceal
+1411,堕,degenerieren,degenerate
+1412,陥,hineinfallen,collapse
+1413,穴,Loch,hole
+1414,空,leer,empty
+1415,控,sich zurückhalten,withdraw
+1416,突,stechen,stab
+1417,究,forschen,research
+1418,窒,verstopft,plug up
+1419,窃,verstohlen,stealth
+1420,窟,Kaverne,cavern
+1421,窪,Senke,depression
+1422,搾,auspressen,squeeze
+1423,窯,Brennofen,kiln
+1424,窮,in der Klemme,hard up
+1425,探,ertasten,grope
+1426,深,tief,deep
+1427,丘,Hügel,hill
+1428,岳,Bergspitze,Point
+1429,兵,Soldat,soldier
+1430,浜,Küste,seacoast
+1431,糸,Faden,thread
+1432,織,weben,weave
+1433,繕,ausbessern,darning
+1434,縮,schrumpfen,shrink
+1435,繁,üppig,luxuriant
+1436,縦,senkrecht,vertical
+1437,緻,minutiös,fine
+1438,線,Linie,line
+1439,綻,Zusammenbruch,come apart at the seams
+1440,締,zuschnüren,tighten
+1441,維,Faser,fiber
+1442,羅,Seidengaze,gauze
+1443,練,üben,practice
+1444,緒,Schnurende,thong
+1445,続,fortsetzen,continue
+1446,絵,Bild,picture
+1447,統,vereinen,overall
+1448,絞,wringen,strangle
+1449,給,Gehalt,salary
+1450,絡,sich verflechten,entwine
+1451,結,binden,tie
+1452,終,Ende,end
+1453,級,Klasse,class
+1454,紀,Chronik,chronicle
+1455,紅,knallrot,crimson
+1456,納,einzahlen,settlement
+1457,紡,spinnen,spinning
+1458,紛,ablenken,distract
+1459,紹,vorstellen,introduce
+1460,経,Sutra,sutra
+1461,紳,Gentleman,sire
+1462,約,Versprechen,promise
+1463,細,fein,dainty
+1464,累,anhäufen,accumulate
+1465,索,Seil,cord
+1466,総,General-,general
+1467,綿,Baumwolle,cotton
+1468,絹,Seide,silk
+1469,繰,aufwinden,winding
+1470,継,erben,inherit
+1471,緑,grün,green
+1472,縁,Beziehung,affinity
+1473,網,Netz,netting
+1474,緊,angespannt,tense
+1475,紫,violett,purple
+1476,縛,Fesseln,truss
+1477,縄,Strohseil,straw rope
+1478,幼,Kindheit,infancy
+1479,後,hinter,behind
+1480,幽,undeutlich,faint
+1481,幾,wie viel,how many
+1482,機,Mechanismus,mechanism
+1483,畿,Vororte der Hauptstadt,capital suburbs
+1484,玄,mysteriös,mysterious
+1485,畜,Vieh,livestock
+1486,蓄,speichern,amass
+1487,弦,Bogensehne,bowstring
+1488,擁,umarmen,hug
+1489,滋,nahrhaft,nourishing
+1490,慈,Mildtätigkeit,mercy
+1491,磁,Magnet,magnet
+1492,系,Stammbaum,lineage
+1493,係,zuständig,person in charge
+1494,孫,Enkel,grandchild
+1495,懸,Aufhängung,suspend
+1496,遜,anspruchslos,modest
+1497,却,stattdessen,instead
+1498,脚,Schienbein,shins
+1499,卸,Großhandel,wholesale
+1500,御,ehrwürdig,honorable
+1501,服,Kleidung,clothing
+1502,命,Schicksal,fate
+1503,令,Befehl,orders
+1504,零,Null,zero
+1505,齢,Alter,age
+1506,冷,kühl,cool
+1507,領,Hoheitsgebiet,jurisdiction
+1508,鈴,Glöckchen,small bell
+1509,勇,Mut,courage
+1510,湧,aufwallen,bubble up
+1511,通,Verkehr,traffic
+1512,踊,tanzen,jump
+1513,疑,zweifeln,doubt
+1514,擬,nachahmen,mimic
+1515,凝,erstarren,congeal
+1516,範,Muster,pattern
+1517,犯,Verbrechen,crime
+1518,氾,weitreichend,widespread
+1519,厄,Unglück,unlucky
+1520,危,gefährlich,dangerous
+1521,宛,Adresse,address
+1522,腕,Arm,arm
+1523,苑,Lustgarten,garden
+1524,怨,Groll,grudge
+1525,柳,Weidenbaum,willow
+1526,卵,Ei,egg
+1527,留,bleiben,detain
+1528,瑠,azurblau,marine blue
+1529,貿,Kommerz,trade
+1530,印,Stempel,stamp
+1531,臼,Mörser,mortar
+1532,毀,kaputt machen,break
+1533,興,Unterhaltung,entertain
+1534,酉,Zeichen des Hahns,sign of the bird
+1535,酒,Sake,sake
+1536,酌,einschenken,bartending
+1537,酎,Schnaps,hooch
+1538,酵,Gärung,fermentation
+1539,酷,grausam,cruel
+1540,酬,Vergeltung,repay
+1541,酪,Molkereiprodukte,dairy products
+1542,酢,Essig,vinegar
+1543,酔,betrunken,drunk
+1544,配,zuteilen,distribute
+1545,酸,Säure,acid
+1546,猶,aufschieben,waver
+1547,尊,achten,revered
+1548,豆,Bohne,beans
+1549,頭,Kopf,head
+1550,短,kurz,short
+1551,豊,reichlich,bountiful
+1552,鼓,Trommel,drum
+1553,喜,fröhlich,rejoice
+1554,樹,Gehölz,timber-trees
+1555,皿,Schale,dish
+1556,血,Blut,blood
+1557,盆,Tablett,basin
+1558,盟,Bündnis,alliance
+1559,盗,stehlen,steal
+1560,温,warm,warm
+1561,蓋,Deckel,lid
+1562,監,überwachen,oversee
+1563,濫,überlaufen,overflow
+1564,鑑,Vorbild,specimen
+1565,藍,Indigo,indigo
+1566,猛,wild,fierce
+1567,盛,Blütezeit,bloom
+1568,塩,Salz,salt
+1569,銀,Silber,silver
+1570,恨,übel nehmen,resentment
+1571,根,Wurzel,root
+1572,即,sofort,instant
+1573,爵,Baron,baron
+1574,節,Knotenpunkt,node
+1575,退,zurückweichen,retreat
+1576,限,begrenzen,limit
+1577,眼,Augapfel,eyeball
+1578,良,gut,good
+1579,朗,heiter,melodious
+1580,浪,Wogen,wandering
+1581,娘,Tochter,daughter
+1582,食,essen,eat
+1583,飯,Mahlzeit,meal
+1584,飲,trinken,drink
+1585,飢,hungrig,hungry
+1586,餓,verhungern,starve
+1587,飾,schmücken,decorate
+1588,餌,Futter,feed
+1589,館,Gebäude,Bldg.
+1590,餅,Mochi,mochi
+1591,養,ernähren,foster
+1592,飽,satt,sated
+1593,既,bereits,previously
+1594,概,ungefähr,outline
+1595,慨,wehmütig,rue
+1596,平,flach,even
+1597,呼,rufen,call
+1598,坪,Tsubo,two-mat area
+1599,評,bewerten,evaluate
+1600,刈,mähen,reap
+1601,刹,Moment,moment
+1602,希,Hoffnung,hope
+1603,凶,Schurke,villain
+1604,胸,Brust,bosom
+1605,離,entfernen,detach
+1606,璃,Lapislazuli,crystal
+1607,殺,töten,kill
+1608,爽,erquickend,bracing
+1609,純,echt,genuine
+1610,頓,plötzlich,immediate
+1611,鈍,stumpf,dull
+1612,辛,würzig,spicy
+1613,辞,abdanken,resign
+1614,梓,Katalpa,catalpa
+1615,宰,Anführer,superintend
+1616,壁,Mauer,wall
+1617,璧,durchtriebener Edelstein,holed gem
+1618,避,vermeiden,evade
+1619,新,neu,new
+1620,薪,Brennholz,firewood
+1621,親,Eltern,parent
+1622,幸,glücklich,happiness
+1623,執,beharrlich,tenacious
+1624,摯,umklammern,clasp
+1625,報,Meldung,report
+1626,叫,schreien,shout
+1627,糾,drehen und wenden,twist
+1628,収,einnehmen,income
+1629,卑,gemein,fowly
+1630,碑,Grabstein,tombstone
+1631,陸,Festland,land
+1632,睦,intim,intimate
+1633,勢,Macht,forces
+1634,熱,Hitze,heat
+1635,菱,Rhombus,diamond
+1636,陵,Mausoleum,mausoleum
+1637,亥,Zeichen des Wildschweines,sign of the hog
+1638,核,Kern,nucleus
+1639,刻,schnitzen,engrave
+1640,該,betreffend,above-stated
+1641,骸,sterbliche Überreste,remains
+1642,劾,Verbrechensaufklärung,censure
+1643,述,erwähnen,mention
+1644,術,Fertigkeit,art
+1645,寒,kalt,cold
+1646,塞,aufstauen,block up
+1647,醸,brauen,brew
+1648,譲,Abtretung,defer
+1649,壌,Grundstück,lot
+1650,嬢,Mädchen,lass
+1651,毒,Gift,poison
+1652,素,elementar,elementary
+1653,麦,Gerste,barley
+1654,青,blau,blue
+1655,精,raffiniert,refined
+1656,請,bitten,solicit
+1657,情,Sympathie,feelings
+1658,晴,aufklaren,clear up
+1659,清,rein,pure
+1660,静,Stillstand,quiet
+1661,責,zur Rechenschaft ziehen,blame
+1662,績,Errungenschaft,exploits
+1663,積,stapeln,volume
+1664,債,Schuldschein,bond
+1665,漬,einmachen,pickling
+1666,表,Vorderseite,surface
+1667,俵,Strohsäcke,bag
+1668,潔,unbeschmutzt,undefiled
+1669,契,geloben,pledge
+1670,喫,verzehren,consume
+1671,害,beschädigen,harm
+1672,轄,kontrollieren,control
+1673,割,Anteil,proportion
+1674,憲,Verfassung,constitution
+1675,生,Leben,life
+1676,星,Stern,star
+1677,醒,aufwecken,awakening
+1678,姓,Nachname,surname
+1679,性,Geschlecht,sex
+1680,牲,Tieropfer,animal sacrifice
+1681,産,Produktion,products
+1682,隆,Erhebung,hump
+1683,峰,Gipfel,summit
+1684,蜂,Biene,bee
+1685,縫,nähen,sew
+1686,拝,anbeten,worship
+1687,寿,Langlebigkeit,longevity
+1688,鋳,Metallguss,casting
+1689,籍,registriert,enroll
+1690,春,Frühling,springtime
+1691,椿,Kamelie,camellia
+1692,泰,friedlich,peaceful
+1693,奏,musizieren,play music
+1694,実,Wirklichkeit,reality
+1695,奉,widmen,dedicate
+1696,俸,Lohn,stipend
+1697,棒,Stange,rod
+1698,謹,ergebenst,discreet
+1699,僅,lediglich,trifle
+1700,勤,emsig,diligent
+1701,漢,chinesisch,Sino-
+1702,嘆,seufzen,sigh
+1703,難,schwierig,difficult
+1704,華,prachtvoll,splendor
+1705,垂,baumeln,droop
+1706,唾,Speichel,saliva
+1707,睡,Schlummer,drowsy
+1708,錘,Spindel,spindle
+1709,乗,fahren,ride
+1710,剰,Überschuss,surplus
+1711,今,jetzt,now
+1712,含,umfassen,include
+1713,貪,gieren,covet
+1714,吟,vortragen,versify
+1715,念,Gedanke,wish
+1716,捻,zwirbeln,wrench
+1717,琴,Koto-Harfe,harp
+1718,陰,Finsternis,shade
+1719,予,vorher,beforehand
+1720,序,Vorwort,preface
+1721,預,aufbewahren,deposit
+1722,野,Feldflur,plains
+1723,兼,gleichzeitig,concurrently
+1724,嫌,verabscheuen,dislike
+1725,鎌,Sichel,sickle
+1726,謙,Demut,self-effacing
+1727,廉,billig,bargain
+1728,西,Westen,west
+1729,価,Wert,value
+1730,要,benötigen,need
+1731,腰,Lenden,loins
+1732,票,Stimmzettel,ballot
+1733,漂,vorüberziehen,drift
+1734,標,Markierungspfosten,singpost
+1735,栗,Kastanie,chestnut
+1736,慄,schaudern,shudder
+1737,遷,Übergang,transition
+1738,覆,kentern,capsize
+1739,煙,Rauch,smoke
+1740,南,Süden,south
+1741,楠,Kampferbaum,camphor tree
+1742,献,spenden,offering
+1743,門,Tor,gates
+1744,問,Frage,question
+1745,閲,inspizieren,review
+1746,閥,Clique,clique
+1747,間,Zwischenraum,interval
+1748,闇,düster,pitch dark
+1749,簡,bündig,simplicity
+1750,開,öffnen,open
+1751,閉,schließen,closed
+1752,閣,Turm,tower
+1753,閑,Muße,leisure
+1754,聞,hören,hear
+1755,潤,nass,wet
+1756,欄,Kolumne,column
+1757,闘,kämpfen,fight
+1758,倉,Magazin,godown
+1759,創,Schöpfung,genesis
+1760,非,un-,un-
+1761,俳,Haiku,haiku
+1762,排,ausstoßen,repudiate
+1763,悲,traurig,sad
+1764,罪,Schuld,guilt
+1765,輩,Genosse,comrade
+1766,扉,Vordertür,front door
+1767,侯,Marquis,marquis
+1768,喉,Kehle,throat
+1769,候,Klima,climate
+1770,決,entscheiden,decide
+1771,快,angenehm,cheerful
+1772,偉,bedeutend,admirable
+1773,違,abweichend,difference
+1774,緯,Breitengrad,horizontal
+1775,衛,verteidigen,defense
+1776,韓,Korea,Korea
+1777,干,trocknen,dry
+1778,肝,Leber,liver
+1779,刊,veröffentlichen,publish
+1780,汗,Schweiß,sweat
+1781,軒,Häuser,flats
+1782,岸,Ufer,beach
+1783,幹,Baumstamm,tree trunk
+1784,芋,Kartoffel,potato
+1785,宇,Dachvorsprung,eaves
+1786,余,allzu,too much
+1787,除,ausschließen,exclude
+1788,徐,langsam,gradually
+1789,叙,schildern,confer
+1790,途,unterwegs,route
+1791,斜,diagonal,diagonal
+1792,塗,bemalen,paint
+1793,束,Bündel,bundle
+1794,頼,Vertrauen,trust
+1795,瀬,Stromschnellen,rapids
+1796,勅,kaiserlicher Befehl,imperial order
+1797,疎,Entfremdung,alienate
+1798,辣,bitter,bitter
+1799,速,schnell,quick
+1800,整,regulieren,organizer
+1801,剣,Säbel,saber
+1802,険,steil,precipitous
+1803,検,Beschau,examination
+1804,倹,sparsam,frugal
+1805,重,schwer,heavy
+1806,動,bewegen,move
+1807,腫,Tumor,tumor
+1808,勲,Großtat,meritorious deed
+1809,働,arbeiten,work
+1810,種,Art,species
+1811,衝,zusammenstoßen,collide
+1812,薫,duften,fragrant
+1813,病,krank,ill
+1814,痴,dumm,stupid
+1815,痘,Pocken,pox
+1816,症,Symptome,symptoms
+1817,瘍,Geschwür,carbuncle
+1818,痩,abmagern,lose weight
+1819,疾,geschwind,rapidly
+1820,嫉,missgünstig,envy
+1821,痢,Durchfall,diarrhea
+1822,痕,Narbe,scar
+1823,疲,müde,tired
+1824,疫,Epidemie,epidemic
+1825,痛,Schmerz,pain
+1826,癖,Eigenart,mannerism
+1827,匿,verstecken,hide
+1828,匠,Zimmermann,artisan
+1829,医,Arzt,doctor
+1830,匹,ebenbürtig,equal
+1831,区,Distrikt,ward
+1832,枢,Angelpunkt,hinge
+1833,殴,prügeln,assault
+1834,欧,Europa,Europe
+1835,抑,unterdrücken,repress
+1836,仰,aufblicken,faceup
+1837,迎,willkommen heißen,welcome
+1838,登,erklimmen,ascend
+1839,澄,klar,lucidity
+1840,発,hervorbringen,discharge
+1841,廃,abgeschafft,abolish
+1842,僚,Kollege,colleague
+1843,瞭,offensichtlich,obvious
+1844,寮,Wohnheim,dormitory
+1845,療,therapieren,heal
+1846,彫,bildhauern,carve
+1847,形,Form,shape
+1848,影,Schatten,shadow
+1849,杉,Zeder,cedar
+1850,彩,kolorieren,coloring
+1851,彰,deutlich,patent
+1852,彦,Knabe,lad
+1853,顔,Gesicht,face
+1854,須,müssen,ought
+1855,膨,schwellen,swell
+1856,参,aufsuchen,visit
+1857,惨,elend,wretched
+1858,修,sich beherschen,discipline
+1859,珍,selten,rare
+1860,診,Diagnose,checkup
+1861,文,Text,sentence
+1862,対,gegen,vis-a-vis
+1863,紋,Familienwappen,family crest
+1864,蚊,Mücke,mosquito
+1865,斑,gesprenkelt,speckled
+1866,斉,gleichmäßig,adjusted
+1867,剤,Mittel,dose
+1868,済,beenden,finish
+1869,斎,rituelle Reinigung,purification
+1870,粛,feierlich,solemn
+1871,塁,Baseball-Mal,bases
+1872,楽,Musik,music
+1873,薬,Arznei,medicine
+1874,率,Rate,ratio
+1875,渋,herb,astringent
+1876,摂,in sich aufnehmen,vicarious
+1877,央,Zentrum,center
+1878,英,England,England
+1879,映,reflektieren,reflect
+1880,赤,rot,red
+1881,赦,vergeben,pardon
+1882,変,anders,unusual
+1883,跡,Spuren,tracks
+1884,蛮,Barbar,barbarian
+1885,恋,Liebschaft,romance
+1886,湾,Meerbusen,gulf
+1887,黄,gelb,yellow
+1888,横,waagerecht,sideways
+1889,把,fassen,grasp
+1890,色,Farbton,color
+1891,絶,unterbrechen,discontinue
+1892,艶,glänzend,glossy
+1893,肥,Dünger,fertilizer
+1894,甘,süß,sweet
+1895,紺,dunkelblau,navy blue
+1896,某,soundso,so-and-so
+1897,謀,Intrige,conspire
+1898,媒,Vermittler,mediator
+1899,欺,Betrug,deceit
+1900,棋,Shogi,chess piece
+1901,旗,Flagge,national flag
+1902,期,Periode,period
+1903,碁,Go,Go
+1904,基,Fundament,fundamentals
+1905,甚,ungemein,tremendously
+1906,勘,Intuition,intuition
+1907,堪,aushalten,withstand
+1908,貴,wertvoll,precious
+1909,遺,hinterlassen,bequeath
+1910,遣,schicken,dispatch
+1911,潰,zu Schrott verarbeiten,defile
+1912,舞,Reigen,dance
+1913,無,nichts,nothingness
+1914,組,Zusammensetzung,association
+1915,粗,rau,coarse
+1916,租,Zehnt,tariff
+1917,狙,zielen,aim at
+1918,祖,Vorfahre,ancestor
+1919,阻,vereiteln,thwart
+1920,査,untersuchen,investigate
+1921,助,helfen,help
+1922,宜,schöne Grüße,best regards
+1923,畳,Tatami-Matten,tatami mat
+1924,並,Reihe,row
+1925,普,universal,universal
+1926,譜,Noten,musical score
+1927,湿,feucht,damp
+1928,顕,offenkundig,appear
+1929,繊,dünn,slender
+1930,霊,geistlich,spirits
+1931,業,Gewerbe,profession
+1932,撲,hauen,slap
+1933,僕,meiner einer,me
+1934,共,zusammen,together
+1935,供,darbringen,submit
+1936,異,ungewöhnlich,uncommon
+1937,翼,Flügel,wing
+1938,戴,demütig entgegennehmen,accept humbly
+1939,洪,Überschwemmung,deluge
+1940,港,Hafen,harbor
+1941,暴,toben,outburst
+1942,爆,explodieren,bomb
+1943,恭,respektvoll,respect
+1944,選,Auslese,elect
+1945,殿,Hr.,Mr.
+1946,井,Brunnen,well
+1947,丼,Donburi,donburi
+1948,囲,umringen,surround
+1949,耕,das Feld bestellen,till
+1950,亜,Asien,Asia
+1951,悪,schlecht,bad
+1952,円,Kreis,circle
+1953,角,Winkel,angle
+1954,触,Kontakt,contact
+1955,解,entwirren,unravel
+1956,再,wieder,again
+1957,講,Vorlesung,lecture
+1958,購,abonnieren,subscription
+1959,構,Haltung,posture
+1960,溝,Rinnstein,gutter
+1961,論,Argument,argument
+1962,倫,Ethik,ethics
+1963,輪,Rad,wheel
+1964,偏,parteiisch,partial
+1965,遍,überall,everywhere
+1966,編,Zusammenstellung,compilation
+1967,冊,Buchband,tome
+1968,柵,Palisade,palisade
+1969,典,Kodex,code
+1970,氏,Familienname,family name
+1971,紙,Papier,paper
+1972,婚,Heirat,marriage
+1973,低,niedrig,lower
+1974,抵,widerstehen,resist
+1975,底,Boden,bottom
+1976,民,Volk,people
+1977,眠,schlafen,sleep
+1978,捕,fangen,catch
+1979,哺,säugen,suckle
+1980,浦,Bucht,bay
+1981,蒲,Rohrkolben,bullrush
+1982,舗,Geschäft,shop
+1983,補,ergänzen,supplement
+1984,邸,Residenz,residence
+1985,郭,Stadtviertel,enclosure
+1986,郡,Landkreis,county
+1987,郊,Stadtrand,outskirts
+1988,部,Abteilung,section
+1989,都,Metropole,metropolis
+1990,郵,Post,mail
+1991,邦,Vaterland,home country
+1992,那,Frage(-partikel),interrogative
+1993,郷,Heimatort,hometown
+1994,響,hallen,echo
+1995,郎,Sohn,son
+1996,廊,Korridor,corridor
+1997,盾,Schild,shield
+1998,循,Kreislauf,sequential
+1999,派,Fraktion,faction
+2000,脈,Ader,vein
+2001,衆,Massen,masses
+2002,逓,Kurierdienst,parcel post
+2003,段,Stufe,grade
+2004,鍛,schmieden,forge
+2005,后,Kaiserin,empress
+2006,幻,Trugbild,phantasm
+2007,司,Direktor,director
+2008,伺,Höflichkeitsbesuch,pay respects
+2009,詞,Wortart,parts of speech
+2010,飼,Tierhaltung,domesticate
+2011,嗣,Erbe,heir
+2012,舟,Boot,boat
+2013,舶,Frachter,liner
+2014,航,Seefahrt,navigate
+2015,舷,Dollbord,gunwale
+2016,般,allgemein,carrier
+2017,盤,Platte,tray
+2018,搬,befördern,conveyor
+2019,船,Schiff,ship
+2020,艦,Kriegsschiff,warship
+2021,艇,Kahn,rowboat
+2022,瓜,Melone,melon
+2023,弧,Kreisbogen,arc
+2024,孤,Waise,orphan
+2025,繭,Kokon,cocoon
+2026,益,Gewinn,benefit
+2027,暇,Freizeit,spare time
+2028,敷,ausbreiten,spread
+2029,来,kommen,come
+2030,気,Geist,spirit
+2031,汽,Dampf,vapor
+2032,飛,fliegen,fly
+2033,沈,sinken,sink
+2034,枕,Kopfkissen,pillow
+2035,妻,Ehefrau,wife
+2036,凄,verblüffend,nifty
+2037,衰,verfallen,decline
+2038,衷,innig,inmost
+2039,面,Maske,mask
+2040,麺,Nudeln,noodles
+2041,革,Leder,leather
+2042,靴,Schuhe,shoes
+2043,覇,Vorherrschaft,hegemony
+2044,声,Stimme,voice
+2045,眉,Augenbraue,eyebrow
+2046,呉,geben,give
+2047,娯,Erholung,recreation
+2048,誤,Fehler,mistake
+2049,蒸,Dunst,steam
+2050,承,hinnehmen,acquiesce
+2051,函,Kasten,bin
+2052,極,Pol,poles
+2053,牙,Stoßzahn,tusk
+2054,芽,Knospe,bud
+2055,邪,böse,wicked
+2056,雅,elegant,gracious
+2057,釈,Erklärung,interpretation
+2058,番,dran,turn
+2059,審,Vernehmung,hearing
+2060,翻,wenden,flip
+2061,藩,Clan,clan
+2062,毛,Fell,fur
+2063,耗,verschleißen,decrease
+2064,尾,Schwanz,tail
+2065,宅,Heim,home
+2066,託,anvertrauen,consign
+2067,為,tun,do
+2068,偽,Falschheit,falsehood
+2069,畏,scheu,apprehensive
+2070,長,lang,long
+2071,張,spannen,lengthen
+2072,帳,Notizbuch,notebook
+2073,脹,sich ausdehnen,dilate
+2074,髪,Haupthaar,hair of the head
+2075,展,entfalten,unfold
+2076,喪,vermissen,miss
+2077,巣,Nest,nest
+2078,単,einzeln,simple
+2079,戦,Krieg,war
+2080,禅,Zen,Zen
+2081,弾,Gewehrkugel,bullet
+2082,桜,Kirschbaum,cherry tree
+2083,獣,Tier,animal
+2084,脳,Gehirn,brain
+2085,悩,plagen,trouble
+2086,厳,streng,stern
+2087,鎖,Kette,chain
+2088,挙,heben,raise
+2089,誉,Ruhm,reputation
+2090,猟,Waid,game hunting
+2091,鳥,Vogel,bird
+2092,鳴,zwitschern,chirp
+2093,鶴,Kranich,crane
+2094,烏,Krähe,crow
+2095,蔦,Ranke,vine
+2096,鳩,Taube,pidgeon
+2097,鶏,Huhn,chicken
+2098,島,Insel,island
+2099,暖,Wärme,warmth
+2100,媛,Maid,beautiful woman
+2101,援,unterstützen,abet
+2102,緩,lockern,slacken
+2103,属,zugehörig,belong
+2104,嘱,beauftragen,entrust
+2105,偶,zufällig,accidentally
+2106,遇,begegnen,interview
+2107,愚,albern,foolish
+2108,隅,Ecke,corner
+2109,逆,umgekehrt,inverted
+2110,塑,modellieren,model
+2111,遡,stromaufwärts ziehen,go upstream
+2112,岡,Anhöhe,Mount
+2113,鋼,Stahl,steel
+2114,綱,das Tau,hawser
+2115,剛,unbeugsam,sturdy
+2116,缶,Blechdose,tin can
+2117,陶,Töpferwaren,pottery
+2118,揺,schaukeln,swing
+2119,謡,Noh-Gesang,Noh chanting
+2120,鬱,Schwermut,gloom
+2121,就,bezüglich,concerning
+2122,蹴,kicken,kick
+2123,懇,freundlich,sociable
+2124,墾,Landgewinnung,groundbreaking
+2125,貌,Antlitz,countenance
+2126,免,Befreiung,excuse
+2127,逸,abschweifen,elude
+2128,晩,Abenddämmerung,nightfall
+2129,勉,Fleiß,exertion
+2130,象,Elefant,elephant
+2131,像,Statue,statue
+2132,馬,Pferd,horse
+2133,駒,Pony,pony
+2134,験,prüfen,verification
+2135,騎,Reiter,equestrian
+2136,駐,parken,parking
+2137,駆,antreiben,drive
+2138,駅,Bahnhof,station
+2139,騒,lärmen,boisterous
+2140,駄,Lastpferd,burdensome
+2141,驚,Erstaunen,wonder
+2142,篤,ernsthaft,fervent
+2143,罵,Beleidigung,insult
+2144,騰,Anstieg,inflation
+2145,虎,Tiger,tiger
+2146,虜,Gefangener,captive
+2147,膚,Haut,skin
+2148,虚,inhaltslos,void
+2149,戯,spaßen,frolic
+2150,虞,Angst,uneasiness
+2151,慮,Besonnenheit,prudence
+2152,劇,Drama,drama
+2153,虐,quälen,tyrannize
+2154,鹿,Reh,deer
+2155,麓,Fuß eines Berges,foot of a mountain
+2156,薦,empfehlen,recommend
+2157,慶,jauchzen,jubilation
+2158,麗,hübsch,lovely
+2159,熊,Bär,bear
+2160,能,Fähigkeit,ability
+2161,態,Einstellung,attitude
+2162,寅,Zeichen des Tigers,sign of the tiger
+2163,演,aufführen,performance
+2164,辰,Zeichen des Drachen,sign of the dragon
+2165,辱,entehren,embarrass
+2166,震,beben,quake
+2167,振,schütteln,shake
+2168,娠,Schwangerschaft,with child
+2169,唇,Lippe,lips
+2170,農,Landwirtschaft,agriculture
+2171,濃,konzentriert,concentrated
+2172,送,senden,send off
+2173,関,Zusammenhang,connection
+2174,咲,blühen,blossom
+2175,鬼,Gespenst,ghost
+2176,醜,hässlich,ugly
+2177,魂,Seele,soul
+2178,魔,Dämon,witch
+2179,魅,Faszination,fascination
+2180,塊,Klumpen,clod
+2181,襲,überfallen,attack
+2182,嚇,abschrecken,upbraid
+2183,朕,Pluralis Majestatis,majestic plural
+2184,雰,Atmosphäre,atmosphere
+2185,箇,Gegenstand,item
+2186,錬,härten,tempering
+2187,遵,befolgen,abide by
+2188,罷,aufhören,quit
+2189,屯,Kaserne,barracks
+2190,且,überdies,moreover
+2191,藻,Seetang,seaweed
+2192,隷,Sklave,slave
+2193,癒,heilen,healing
+2194,璽,kaiserliches Siegel,imperial seal
+2195,潟,Lagune,lagoon
+2196,丹,Zinnober,cinnabar
+2197,丑,Zeichen des Ochsen,sing of the cow
+2198,羞,beschämen,humiliate
+2199,卯,Zeichen des Kaninchens,sign of the hare
+2200,巳,Zeichen der Schlange,sign of the snake

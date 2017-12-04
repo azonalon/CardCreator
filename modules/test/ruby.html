@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <span id="word"> 将軍[しょうぐん] は 勇者[ゆうしゃ] に「 君[きみ] は 勲章[くんしょう] に 値[あたい] する」と 言[い] った。 </span> <br>
+    <span id="word"> 将軍[しょうぐん] は 勇者[ゆうしゃ] に「 君[きみ] は 勲章[くんしょう] に 値[あたい] する」と 言[い] った。 </span> <br>
+    <span id="blorg"> 将軍[しょうぐん] は 勇者[ゆうしゃ] に「 君[きみ] は 勲章[くんしょう] に 値[あたい] する」と 言[い] った。 </span>
+    <script>
+        function toggleReading(element) {
+            // console.log("Clicked on element:" + element +
+            var temp = element.getAttribute("rt")
+            element.setAttribute("rt",
+                                 element.getElementsByTagName("rt")[0].innerHTML)
+            element.getElementsByTagName("rt")[0].innerHTML = temp
+        }
+        function toRuby(match, p1, p2, offset, string) {
+            return '<ruby rt="'+ p2 + '" onmouseover="toggleReading(this)" onmouseout="toggleReading(this)" ' + ' >'
+            + p1 + '<rt>&nbsp;</rt>' + '</ruby>'
+        }
+        function parseReading(elementId) {
+            var text = document.getElementById(elementId).innerHTML
+            var rubyParsed = text.replace(/ ?([^ ]+)\[([^ ]+)\] ?/g, toRuby)
+            document.getElementById(elementId).innerHTML = rubyParsed
+        }
+        parseReading("word")
+        parseReading("translation")
+    </script>
+</body>
+</html>
