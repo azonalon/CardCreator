@@ -1,0 +1,202 @@
+@font-face {
+    font-family: hans;
+    src: url(IPAPMincho.ttf);
+}
+p {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+    width: 100%;
+}
+hr {
+    margin-bottom: 5px;
+    padding-bottom: 0px;
+    margin-top: 5px;
+    padding-top: 0px;
+    background: #CCCCCC;
+    height:4px;
+    border: 0px;
+    width: 100%;
+}
+div.card {
+    text-align: center;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    color: #222222;
+    padding: 0px;
+    font-family: hans;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+    /*width: 400px;*/
+}
+h1 {
+    font-size: 60px;
+    font-weight: normal;
+    margin-bottom: 5px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+    /*color: blue;*/
+}
+h1.meaning {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+    font-size: 40px;
+    font-weight: normal;
+}
+h3 {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+table {
+    height: auto;
+    width: 100%;
+    padding: 5px;
+    margin: 5px;
+}
+tr.button td {
+    padding: 0px;
+    width: auto;
+    text-align: left;
+}
+tr.button td.long {
+    width: 100%;
+}
+
+p.kanji {
+    font-size: 35px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+    width: 100%;
+}
+p.keyword {
+    font-size: 17px;
+    font-weight:bold;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+    width: 100%;
+}
+p.kunYomi {
+    font-size: 20px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+    width: 100%;
+}
+p.onYomi {
+    font-size: 20px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+    width: 100%;
+}
+p.heisigFrame {
+    font-size: 20px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+    width: 100%;
+}
+
+td {
+    padding: 5px;
+    margin: 0px;
+    width: 100px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+img {
+    width: 70%;
+    height: auto;
+}
+
+button.accordion {
+    color: black;
+    text-align: center;
+    background-color: #EEEEEE;
+    /*color: rgba(0,0,0,0);*/
+    cursor: pointer;
+    padding: 0px;
+    width: 100%;
+    /*height: auto;*/
+    border: none;
+    outline: none;
+    height: auto;
+    content: "Bla";
+    font-size: 12px;
+    border-radius: 10px;
+    transition: 0.4s;
+}
+li.button {
+    width: 80%;
+    border-radius: 10px;
+    margin: 5px;
+    background-color: #EEEEEE;
+}
+li {
+    display: inline-block;
+    width: 100%;
+    margin: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+    width: 100%;
+}
+
+li.graphic {
+    width: 100%;
+}
+li.kanjiTable {
+    width: 70%;
+    height: auto;
+    display: none;
+}
+li.reading {
+    /*background-color: #3F51B5;*/
+    padding-top: 0px;
+    padding-bottom: 0.1px;
+    margin: 0px;
+}
+li.meaning {
+    /*background-color: #5C6BC0;*/
+}
+li.exampleSentence p {
+    font-size: 18px;
+    display: inline-block;
+}
+li.exampleSentenceTranslation {
+    width: 100%;
+    margin: 10px;
+    /*background-color: #64B5F5;*/
+}
+ul.card {
+    border-left: 0px solid red;
+    margin: 0px;
+    /*background-color: #FFFFFF;*/
+    list-style-type: none;
+    padding: 0px 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+    width: 100%;
+}

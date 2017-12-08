@@ -10,7 +10,7 @@ from modules.MainWidget import MainWidget
 
 app = QtWidgets.QApplication([])
 mw = MainWidget(app, [])
-mw.teExpression.setText("龍")
+mw.teExpression.setText("暴露")
 mw.bSearchImage.click()
 mw.show()
 app.exec_()

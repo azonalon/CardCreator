@@ -8,12 +8,13 @@ class FlowLayout(QtWidgets.QLayout):
         super().__init__()
         self.margin = margin
         self.spacing = spacing
-
         self.itemList = []
 
     def __del__(self):
         item = self.takeAt(0)
         while item:
+            print(item.widget())
+            item.widget().hide()
             item = self.takeAt(0)
 
     def addItem(self, item):
@@ -31,7 +32,6 @@ class FlowLayout(QtWidgets.QLayout):
     def takeAt(self, index):
         if index >= 0 and index < len(self.itemList):
             return self.itemList.pop(index)
-
         return None
 
     def expandingDirections(self):

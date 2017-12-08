@@ -6,6 +6,7 @@ import sys
 import lxml
 import tempfile
 from . import Hurigana
+from .models.KanjiMetadata import expressionToMetadata
 from .InputField import InputField
 from PyQt5 import QtCore, QtWidgets, QtGui, uic
 import argparse
@@ -158,11 +159,12 @@ class MainWidget(QtWidgets.QWidget, uiImageLoader):
         newNote = self.col.newNote()
         self.col.cardCount()
         newNote['Expression']       = self._escapeHtml(self.teExpression.toHtml())
-        newNote['Meaning']          = self._escapeHtml(self.teMeaning.toHtml())
+        newNote['Meaning']          = self._escapeHtml(self.teMeaning.toHtml()).replace('"', '\\"')
         newNote['Reading']          = self._escapeHtml(self.teReading.toHtml())
-        newNote['Example Sentence'] = self._escapeHtml(self.teExampleSentence.toHtml())
+        newNote['Example Sentence'] = self._escapeHtml(self.teExampleSentence.toHtml()).replace('"', '\\"')
         newNote['Translation']      = self._escapeHtml(self.teTranslation.toHtml())
         newNote['Graphic']          = self._escapeHtml(self.tePicture.toHtml())
+        newNote['Metadata']         = expressionToMetadata(newNote['Expression'], self.col)
         return newNote
 
     def popTakobotoNote(self):

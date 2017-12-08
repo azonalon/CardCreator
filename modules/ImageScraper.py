@@ -24,8 +24,9 @@ def saveTo(sourceBytes, target):
         f.write(sourceBytes)
 
 
-header={'User-Agent':"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.134 Safari/537.36" }
-googleApiKey = "AIzaSyDoDZ1pbEvPHwFiWwfpjb8TPSXvRdNNuQo"
+header={'User-Agent': "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36",
+        'Accept-Language': 'ja', 'Referer': 'https://www.google.co.jp/'}
+# googleApiKey = "AIzaSyDoDZ1pbEvPHwFiWwfpjb8TPSXvRdNNuQo"
 
 class DownloadSpeedError(Exception):
     pass
@@ -37,6 +38,7 @@ class ProgressImageLabel(QtWidgets.QLabel):
         super().__init__()
         self.setPixmap(QtGui.QPixmap('./media/loading.jpg'))
         self.menu=None
+        self.setScaledContents(True)
 
     def mouseReleaseEvent(self, ev):
         if self.menu:
@@ -54,77 +56,80 @@ class ProgressImageLabel(QtWidgets.QLabel):
         self.moveImage = QtWidgets.QAction("Copy to note")
         self.moveImage.triggered.connect(self.copyImage)
         self.menu.addAction(self.moveImage)
-        self.setPixmap(QtGui.QPixmap.fromImage(qImage))
+        self.setPixmap(QtGui.QPixmap.fromImage(qImage.scaledToWidth(100)))
 
 
 class ImageScraper(QtWidgets.QWidget):
     def __init__(self, parent):
         super().__init__(parent)
-        self.setStyleSheet("background-color: white")
-        self.setLayout(FlowLayout())
-        self.setAutoFillBackground(True)
+        self.parent = parent
+        # self.setStyleSheet("background-color: white")
+        self.spacing = 5
+        # self.setLayout(FlowLayout(spacing=self.spacing))
+        # self.setAutoFillBackground(True)
         self.query = ''
         self.nWorkers = 8
         self.nAcquired = 0
-        self.workerThreads = {}
+        self.workers = [ImageScraperWorker(None) for _ in range(self.nWorkers)]
+        for w in self.workers:
+            w.finished.connect(self.onWorkerExit)
+        self.setLayout(FlowLayout(spacing=self.spacing))
+        self.lock = QtCore.QMutex()
 
     def clear(self):
         self.layout().__del__()
+        # for w in self.layout().widgets():
+        #     self.layout().removeWidget(w)
+        self.setStyleSheet("background-color:black;")
 
     def startScrape(self, keyword, nMax, method='google'):
-            self.linkIter = ImageLinkFetchers.searchGoogle(keyword)
+            self.linkIter = ImageLinkFetchers.searchGoogle(keyword, loadThumbnail=False)
             self.nMax = nMax
             self.nAcquired = 0
-            for i in range(self.nWorkers):
-                thread = QtCore.QThread()
-                worker = ImageScraperWorker(None)
-                worker.moveToThread(thread)
-                thread.started.connect(worker.downloadImage)
-                worker.finished.connect(thread.exit)
-                thread.finished.connect(self.onWorkerExit)
-                label = ProgressImageLabel()
-                self.layout().addWidget(label)
-                worker.madeProgress.connect(label.setProgress)
-                thread.start()
-                self.workerThreads[thread] = (worker, thread, label)
+            for w in self.workers:
+                w.abort()
+                w.imageLink = None
+            for w in self.workers:
+                w.wait()
+                w.start()
 
     def abort(self):
         for worker, thread, label in self.workerThreads.items():
             worker.abort()
 
     def onWorkerExit(self):
-        # print("In worker exit", QtCore.QThread.currentThreadId())
-        # print("Sender:", self.sender())
-        sender = self.sender()
-        if not sender:
+        print("In worker exit", QtCore.QThread.currentThreadId())
+        print("Sender:", self.sender())
+        worker = self.sender()
+        if not worker:
             #TODO understand why sender can be None
             return
-        worker, thread, label = self.workerThreads[sender]
         if worker.qImage is not None:
-            label.setFinal(worker.qImage)
             self.nAcquired += 1
+            label = ProgressImageLabel()
+            self.layout().addWidget(label)
+            label.setFinal(worker.qImage)
         if self.nAcquired < self.nMax:
             try:
+                self.lock.lock()
                 worker.imageLink, imageType = next(self.linkIter)
+                self.lock.unlock()
             except urllib.error.URLError:
                 # TODO: handle network connection fail
                 pass
-            thread.start()
-        else:
-            try:
-                del self.workerThreads[self.sender()]
-            except:
-                pass
+            worker.start()
 
 
-class ImageScraperWorker(QtCore.QObject):
+class ImageScraperWorker(QtCore.QThread):
     madeProgress = pyqtSignal(float)
-    finished = pyqtSignal()
     def __init__(self, imageLink):
         super(QtCore.QObject, self).__init__()
         self.imageLink = imageLink
+
+    def run(self):
         self.qImage = None
-        self.shouldQuit = False
+        self.shouldQuit=False
+        self.downloadImage()
 
     def abort(self):
         self.shouldQuit = True
@@ -141,8 +146,10 @@ class ImageScraperWorker(QtCore.QObject):
             self.qImage = QtGui.QImage(f)
         except (DownloadSpeedError, AbortionError)as e:
             pass
-        print("Exit download",  self.imageLink)
-        self.finished.emit()
+            print("Aborting...", self.imageLink)
+        except (urllib.error.HTTPError, urllib.error.URLError):
+            pass
+            print("Link not found, aborting...")
 
     def urlretrieveReportHook(self, blocknum, blocksize, filesize):
         if self.shouldQuit:
@@ -150,8 +157,8 @@ class ImageScraperWorker(QtCore.QObject):
         timePassed = time.time() - self.lastTime
         bps = blocksize/timePassed
         eta = filesize/bps
-        if eta > 10:
-            print("Download Takes too long!")
+        if eta > 100:
+            print("Download Takes too long! eta:%4.2fs" % eta)
             raise DownloadSpeedError
         elif eta > 0.5:
             self.madeProgress.emit(blocknum * blocksize / filesize)
@@ -160,41 +167,12 @@ class ImageScraperWorker(QtCore.QObject):
 
 
 class ImageLinkFetchers(object):
-    # sigLinksReady = pyqtSignal(list)
-    # def __init__(self):
-        # super().__init__()
-
-    # def requestImageLinks(self, query, number, engine='google'):
-    #     """ Queries Google for image links.
-    #     :param query: The keywords to search for.
-    #     :param number: The maximum number of links to return.
-    #     :returns: A list of tuples (imageUrl, imageType)
-    #     """
-    #     self.number = number
-    #     {'google': self.searchGoogle,
-    #     'duckduckgo': self.searchDuckDuckGo}.get(engine)(query)
-
-    def parseDuckDuckGoHtml(self, htmlstr):
-        htmlstr = open('./duckduck.html', 'r').read() if htmlstr else htmlstr
-        tree = lxml.html.fromstring(htmlstr)
-        thumbnails = tree.xpath('//img[@class="tile--img__img  js-lazyload"]/@src')
-        thumbnails = list(map(unquote, thumbnails))
-        self.sigLinksReady.emit(list(zip(thumbnails, ['jpg'] * len(thumbnails))))
-
-    def searchDuckDuckGo(self, query):
-        query= query.split()
-        query='+'.join(query)
-        url="https://www.duckduckgo.com/?q="+query+"&t=h_&iar=images&iax=1&ia=images"
-        getHtml = self.GetDynamicHtml()
-        getHtml.sigHtmlAvailable.connect(self.parseDuckDuckGoHtml)
-        getHtml.getHtml(url)
-
-
     def searchGoogle(query, loadThumbnail=True):
         # TODO: use 'forward' 'scroll' and 'start' to maybe get more images
         query = query.split(' ')
         query = quote('+'.join(query), encoding='utf-8')
         url="https://www.google.co.jp/search?q="+query+"&source=lnms&tbm=isch"
+        url="https://www.google.co.jp/search?q="+query+"&source=lnms&tbm=isch&sa=X&ved=0ahUKEwj2y4arm_rXAhURUlAKHZXwDg8Q_AUICigB&biw=700&bih=1102"
         r = urllib.request.urlopen(urllib.request.Request(url, headers=header))
         tree = lxml.html.parse(r)
         links = tree.xpath('//div[contains(@class, "rg_meta")]')
