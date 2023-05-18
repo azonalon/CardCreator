@@ -1,7 +1,10 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
-from PyQt5 import QtCore, QtWidgets, QtGui, uic
+from PyQt5 import QtCore, QtWidgets, QtGui#, uic
 import argparse, sys, os
+addonPath = os.path.split(os.path.realpath(__file__))[0]
+print('Addon path:', addonPath)
+sys.path.append(addonPath + '/modules')
 
 def ankiMain():
     # import the main window object (mw) from aqt

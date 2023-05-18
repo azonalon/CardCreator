@@ -3,12 +3,12 @@
 import re
 import os
 import sys
-import lxml
+from lxml.html import fromstring, tostring
 import tempfile
 from . import Hurigana
 from .models.KanjiMetadata import expressionToMetadata
 from .InputField import InputField
-from PyQt5 import QtCore, QtWidgets, QtGui, uic
+from PyQt5 import QtCore, QtWidgets, QtGui
 import argparse
 # from .ImageScraper import ImageScraper
 
@@ -54,10 +54,15 @@ class MainWidget(QtWidgets.QWidget, uiImageLoader):
             self.insertPicture(data.imageData())
         elif data.hasText():
             self.sender().insertPlainText(data.text())
+    def syncCollection(self):
+        from .anki.sync import Syncer
+        s = Syncer(self.col)
 
     def initHandlers(self):
-        self.bSearchImage.clicked.connect(self.getImages)
+        # TODO: FIX IMAGE SEARCH
+        # self.bSearchImage.clicked.connect(self.getImages)
         self.bAddNote.clicked.connect(self.addNote)
+        self.syncButton.clicked.connect(self.syncCollection)
         for field in self.inputFields:
             field.ctrlEnterPressed.connect(self.addNote)
             field.itemDropped.connect(self.onItemDropped)
@@ -131,11 +136,11 @@ class MainWidget(QtWidgets.QWidget, uiImageLoader):
             import aqt
             return aqt.mw.col
 
-        sys.path.append('/home/eduard/software/anki/')
-        import anki
+        # sys.path.append(sys.path.abspath(__file__))
+        from .anki import Collection
         ankiHome = '/home/eduard/.local/share/Anki2/Eduard/'
         try:
-            col = anki.Collection(ankiHome + 'collection.anki2')
+            col = Collection(ankiHome + 'collection.anki2')
             ### changes cwd to /path/to/collection.media/
             return col
         except Exception as e:
@@ -177,14 +182,18 @@ class MainWidget(QtWidgets.QWidget, uiImageLoader):
         note = self.col.getNote(note)
         self.teExpression.setText(note['Japanese'])
         meaning =  note['Meaning'].split(",")
-        meaning = ",".join(set([re.sub(" ?\([fm]\) ?","", x.lower()) for x in meaning]))
+        meaning = ",".join([re.sub(" ?\([fmn]\)","", x.lower()) for x in meaning])
         self.teMeaning.setText(meaning)
         self.teReading.setText(note['Reading'])
         self.teExampleSentence.setText(note['Sentence'])
-        self.teTranslation.setText(note['SentenceMeaning'])
+        self.teTranslation.setText(note['SentenceMeaning'].replace('"', r'\"'))
         self.tePicture.setText("")
         note.addTag("exported")
         note.flush()
+        # suspend corresponding card
+        for c in note.cards():
+            c.queue = -1
+            c.flush()
         # self.col.remNotes([note.id])
 
     def clearFields(self):
@@ -233,6 +242,7 @@ class MainWidget(QtWidgets.QWidget, uiImageLoader):
         # if wr < w:
         #     im = im.resize((wr, hr), resample=Image.LANCZOS)
         imageType = 'jpg'
+        # qimage.fill(QtGui.qRgba(255, 255, 255, 255));
         newName = os.path.basename(
             tempfile.mkstemp(prefix='pic_', dir='.')[1] )
 
@@ -241,7 +251,7 @@ class MainWidget(QtWidgets.QWidget, uiImageLoader):
         self.tePicture.insertHtml('<img src="%s.%s" class="Image"/>' % (newName, imageType))
 
     def saveStagedPictures(self, note):
-        tree = lxml.html.fromstring(self.tePicture.toHtml())
+        tree = fromstring(self.tePicture.toHtml())
         imgs = tree.xpath('//img/@src')
         leftovers = set(imgs) - set(self.stagedPictures.keys())
         for img in leftovers:
@@ -276,11 +286,11 @@ class MainWidget(QtWidgets.QWidget, uiImageLoader):
         Takes the output of QTextEdit.toHtml() and strips the outer
         html tags for output to Anki notes
         """
-        tree = lxml.html.fromstring(htmlString)
+        tree = fromstring(htmlString)
         inner = tree.xpath('/html/body/p')
         body = inner[0]
         result =  (body.text or '') + \
-            ''.join([lxml.html.tostring(child, method='xml', encoding='unicode')
+            ''.join([tostring(child, method='xml', encoding='unicode')
                      for child in body.iterchildren()])
         if result == '<br/>':
             return ""

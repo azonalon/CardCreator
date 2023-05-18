@@ -394,7 +394,7 @@
             <x>0</x>
             <y>0</y>
             <width>455</width>
-            <height>559</height>
+            <height>557</height>
            </rect>
           </property>
           <property name="sizePolicy">
@@ -666,6 +666,13 @@
     </spacer>
    </item>
    <item>
+    <widget class="QPushButton" name="syncButton">
+     <property name="text">
+      <string>Sync</string>
+     </property>
+    </widget>
+   </item>
+   <item>
     <widget class="QLineEdit" name="leInfo">
      <property name="enabled">
       <bool>true</bool>
@@ -725,7 +732,6 @@
   <tabstop>bTakeFromList</tabstop>
   <tabstop>bExampleSentenceAddReadings</tabstop>
   <tabstop>bExpressionAddReading</tabstop>
-  <tabstop>leInfo</tabstop>
  </tabstops>
  <resources/>
  <connections/>

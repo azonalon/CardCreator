@@ -9,7 +9,6 @@ import time
 from .timer import timer
 from PyQt5.QtWidgets import QApplication
 # from PyQt5.QtCore import QUrl, pyqtSignal, QObject
-from PyQt5.QtWebEngineWidgets import QWebEnginePage
 import lxml.html
 import urllib.request as request
 from urllib.parse import urlparse, urlencode, quote, unquote
@@ -140,16 +139,22 @@ class ImageScraperWorker(QtCore.QThread):
             if self.imageLink is None:
                 raise AbortionError
             self.lastTime = time.time()
-            f, headers = urllib.request.urlretrieve(
+            f = urllib.request.urlopen(
                 self.imageLink,
-                reporthook=self.urlretrieveReportHook)
-            self.qImage = QtGui.QImage(f)
+                timeout=2
+            ).read()
+            img = QtGui.QImage()
+            img.loadFromData(f)
+            self.qImage = img
         except (DownloadSpeedError, AbortionError)as e:
             pass
             print("Aborting...", self.imageLink)
         except (urllib.error.HTTPError, urllib.error.URLError):
             pass
             print("Link not found, aborting...")
+        except Exception as e:
+            print("Some error occured, ignoring... ", e)
+            pass
 
     def urlretrieveReportHook(self, blocknum, blocksize, filesize):
         if self.shouldQuit:

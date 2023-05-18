@@ -29,7 +29,7 @@ def rubyReading(txt):
     txt = urllib.parse.quote(txt)
     url = "http://jlp.yahooapis.jp/FuriganaService/V1/furigana?appid=" + YAHOO_APP_ID + "&grade=1&sentence=" + txt
     r = request.Request(url,headers=header)
-    result = request.urlopen(r, timeout=4.0)
+    result = request.urlopen(r, timeout=1.0)
     tree = etree.parse(result)
     # with open("test.xml", 'wb') as f:
         # f.write(etree.tostring(tree, pretty_print=True, encoding='utf-8'))

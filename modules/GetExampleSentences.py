@@ -82,19 +82,20 @@ class AlkScraper(QtCore.QObject):
         if usernamePassword is not None:
             self.alcLoginFormData = urlencode({"username": usernamePassword[0],
                                                "password": usernamePassword[1],
-                                               "login-form-type": "pwd"
+                                               "login-form-type": "pwd",
+                                               "login": "ログイン"
                                                })
 
-        loginUrl = "https://eowpf.alc.co.jp/pkmslogin.form?token=Unknown"
+        loginUrl = "https://eowf.alc.co.jp/login"
         req = request.Request(loginUrl, data=self.alcLoginFormData.encode(),
                               method='POST')
         result = request.urlopen(req)
         # print(*result.getheaders(), sep='\n')
         cookies = getResponseCookiesString(result)
 
-        if not 'LtpaToken2' in cookies:
-            print("Wrong Login to Alc!")
-            raise Exception("Wrong login Data")
+        # if not 'LtpaToken2' in cookies:
+        #     print("Wrong Login to Alc!")
+        #     raise Exception("Wrong login Data")
 
         print('cookies A', cookies)
 

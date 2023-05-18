@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file './modules/imageViewer.ui'
+# Form implementation generated from reading ui file 'imageViewer.ui'
 #
-# Created by: PyQt5 UI code generator 5.9.2
+# Created by: PyQt5 UI code generator 5.11.3
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -207,7 +207,7 @@ class Ui_Form(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents_2 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_2.setGeometry(QtCore.QRect(0, 0, 455, 559))
+        self.scrollAreaWidgetContents_2.setGeometry(QtCore.QRect(0, 0, 455, 557))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -339,6 +339,9 @@ class Ui_Form(object):
         self.verticalLayout.addWidget(self.examplesList)
         spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout.addItem(spacerItem1)
+        self.syncButton = QtWidgets.QPushButton(Form)
+        self.syncButton.setObjectName("syncButton")
+        self.verticalLayout.addWidget(self.syncButton)
         self.leInfo = QtWidgets.QLineEdit(Form)
         self.leInfo.setEnabled(True)
         self.leInfo.setStyleSheet("background-color: rgb(239, 235, 231);")
@@ -359,7 +362,6 @@ class Ui_Form(object):
         Form.setTabOrder(self.tePicture, self.bTakeFromList)
         Form.setTabOrder(self.bTakeFromList, self.bExampleSentenceAddReadings)
         Form.setTabOrder(self.bExampleSentenceAddReadings, self.bExpressionAddReading)
-        Form.setTabOrder(self.bExpressionAddReading, self.leInfo)
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
@@ -385,6 +387,7 @@ class Ui_Form(object):
         self.cbExampleSearchMethod.setItemText(0, _translate("Form", "アルク"))
         self.cbExampleSearchMethod.setItemText(1, _translate("Form", "Tatoeba"))
         self.bSearchExampleSentence.setText(_translate("Form", "Search"))
+        self.syncButton.setText(_translate("Form", "Sync"))
         self.leInfo.setText(_translate("Form", "HI there"))
         self.actionAdd_Note.setText(_translate("Form", "Add Note"))
         self.actionAdd_Note.setToolTip(_translate("Form", "Add a new Note"))

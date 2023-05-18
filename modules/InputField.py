@@ -1,4 +1,4 @@
-from PyQt5 import QtCore, QtWidgets, QtGui, uic
+from PyQt5 import QtCore, QtWidgets, QtGui
 class InputField(QtWidgets.QTextEdit):
     focusLost = QtCore.pyqtSignal()
     ctrlEnterPressed = QtCore.pyqtSignal()
